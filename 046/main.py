@@ -11,12 +11,21 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        if len(nums) == 0:
+        n = len(nums)
+        if n == 0:
             return [[]]
+        elif n == 1:
+            return [[nums[0]]]
         else:
             prev = self.permute(nums[1:])
-            new = prev + list(map(lambda x: x + [nums[0]], prev))
-            return new
+            for i in range(n - 1):
+                prev.extend(self.permute(nums[1:]))
+            prev.sort()
+            prev_len = len(prev[0]) + 1
+            for i in range(len(prev)):
+                prev[i].insert(i % prev_len, nums[0])
+            return prev
 
 ans = Solution()
-print(ans.permute([1, 2, 3]))
+for v in ans.permute([1, 2, 3, 4]):
+    print(v)
