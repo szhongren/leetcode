@@ -28,6 +28,8 @@ class Solution(object):
             ans.append(invs[idx][1] if idx < len(intervals) else -1)
         return ans
 
+# TODO: UNDERSTAND CODE
+
 ans = Solution()
 print(ans.findRightInterval([ Interval(1,4), Interval(2,3), Interval(3,4) ]))
 print(ans.findRightInterval([Interval(1,2) ]))
