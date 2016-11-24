@@ -26,9 +26,25 @@ class Solution(object):
         """
         if head == None:
             return None
-        odd_p = head
-        even_p = None
-        pass
+        else:
+            odd_p = head
+            even_p = odd_p.next
+            odd_head = odd_p
+            even_head = even_p
+            curr_is_odd = True
+            while odd_p != None and even_p != None:
+                if curr_is_odd:
+                    odd_p.next = even_p.next
+                    odd_p = even_p.next
+                else:
+                    even_p.next = odd_p.next
+                    even_p = odd_p.next
+                curr_is_odd = not curr_is_odd
+            odd_p = odd_head
+            while odd_p.next != None:
+                odd_p = odd_p.next
+            odd_p.next = even_head
+            return odd_head
 
 
 def makeNumber(a):

@@ -7,7 +7,12 @@ Note: The result may be very large, so you need to return a string instead of an
 """
 
 def arrange_cmp(str1, str2):
-    return str1 > str2
+    if str1 < str2:
+        return -1
+    elif str1 > str2:
+        return 1
+    else:
+        return 0
 
 class Solution:
     def largestNumber(self, nums):
