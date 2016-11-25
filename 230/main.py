@@ -28,7 +28,23 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        pass
+        stack = [root]
+        found = False
+        while len(stack) != 0:
+            curr = stack[-1]
+            stack = stack[:-1]
+            if curr == None:
+                found = True
+            elif found:
+                if k == 1:
+                    return curr.val
+                else:
+                    k -= 1
+                found = False
+            else:
+                stack.append(curr.right)
+                stack.append(curr)
+                stack.append(curr.left)
 
 def make_tree(ls):
     """
@@ -46,4 +62,4 @@ def make_tree(ls):
     return list_nodes[0]
 
 ans = Solution()
-print(ans.kthSmallest(make_tree([8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7, 9, 11, 13, 15]))
+print(ans.kthSmallest(make_tree([8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7, 9, 11, 13, 15]), 1))

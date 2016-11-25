@@ -72,6 +72,7 @@ Solution	205/main.py	/^class Solution(object):$/;"	kind:class	line:16
 Solution	206/main.py	/^class Solution(object):$/;"	kind:class	line:10
 Solution	217/main.py	/^class Solution(object):$/;"	kind:class	line:5
 Solution	226/main.py	/^class Solution(object):$/;"	kind:class	line:5
+Solution	230/main.py	/^class Solution(object):$/;"	kind:class	line:24
 Solution	231/main.py	/^class Solution(object):$/;"	kind:class	line:5
 Solution	235/main.py	/^class Solution(object):$/;"	kind:class	line:14
 Solution	237/main.py	/^class Solution(object):$/;"	kind:class	line:13
@@ -84,6 +85,7 @@ Solution	283/main.py	/^class Solution(object):$/;"	kind:class	line:11
 Solution	287/main.py	/^class Solution(object):$/;"	kind:class	line:11
 Solution	292/main.py	/^class Solution(object):$/;"	kind:class	line:9
 Solution	299/main.py	/^class Solution(object):$/;"	kind:class	line:19
+Solution	309/main.py	/^class Solution(object):$/;"	kind:class	line:15
 Solution	326/main.py	/^class Solution(object):$/;"	kind:class	line:5
 Solution	328/main.py	/^class Solution(object):$/;"	kind:class	line:21
 Solution	343/main.py	/^class Solution(object):$/;"	kind:class	line:14
@@ -119,6 +121,7 @@ Solution	415/main.py	/^class Solution(object):$/;"	kind:class	line:18
 Solution	419/main.py	/^class Solution(object):$/;"	kind:class	line:21
 Solution	436/main.py	/^class Solution(object):$/;"	kind:class	line:18
 Solution	441/main.py	/^class Solution(object):$/;"	kind:class	line:9
+Solution	452/main.py	/^class Solution(object):$/;"	kind:class	line:18
 Solution	453/main.py	/^class Solution(object):$/;"	kind:class	line:5
 Solution	455/main.py	/^class Solution(object):$/;"	kind:class	line:37
 Solution	459/main.py	/^class Solution(object):$/;"	kind:class	line:6
@@ -133,6 +136,7 @@ TreeNode	110/main.py	/^class TreeNode(object):$/;"	kind:class	line:44
 TreeNode	144/main.py	/^class TreeNode(object):$/;"	kind:class	line:7
 TreeNode	145/main.py	/^class TreeNode(object):$/;"	kind:class	line:7
 TreeNode	199/main.py	/^class TreeNode(object):$/;"	kind:class	line:30
+TreeNode	230/main.py	/^class TreeNode(object):$/;"	kind:class	line:18
 TreeNode	235/main.py	/^class TreeNode(object):$/;"	kind:class	line:8
 TreeNode	leafEqual/main.py	/^class TreeNode(object):$/;"	kind:class	line:1
 __init__	002/main.py	/^    def __init__(self, x):$/;"	kind:member	line:7
@@ -147,6 +151,7 @@ __init__	144/main.py	/^    def __init__(self, x):$/;"	kind:member	line:8
 __init__	145/main.py	/^    def __init__(self, x):$/;"	kind:member	line:8
 __init__	199/main.py	/^    def __init__(self, x):$/;"	kind:member	line:31
 __init__	206/main.py	/^    def __init__(self, x):$/;"	kind:member	line:6
+__init__	230/main.py	/^    def __init__(self, x):$/;"	kind:member	line:19
 __init__	235/main.py	/^    def __init__(self, x):$/;"	kind:member	line:9
 __init__	328/main.py	/^    def __init__(self, x):$/;"	kind:member	line:17
 __init__	380/main.py	/^    def __init__(self):$/;"	kind:member	line:38
@@ -208,6 +213,7 @@ ans	199/main.py	/^ans = Solution()$/;"	kind:variable	line:61
 ans	201/main.py	/^ans = Solution()$/;"	kind:variable	line:19
 ans	204/main.py	/^ans = Solution()$/;"	kind:variable	line:40
 ans	205/main.py	/^ans = Solution()$/;"	kind:variable	line:36
+ans	230/main.py	/^ans = Solution()$/;"	kind:variable	line:48
 ans	231/main.py	/^ans = Solution()$/;"	kind:variable	line:25
 ans	235/main.py	/^ans = Solution()$/;"	kind:variable	line:46
 ans	241/main.py	/^ans = Solution()$/;"	kind:variable	line:36
@@ -218,8 +224,9 @@ ans	283/main.py	/^ans = Solution()$/;"	kind:variable	line:32
 ans	287/main.py	/^ans = Solution()$/;"	kind:variable	line:30
 ans	292/main.py	/^ans = Solution()$/;"	kind:variable	line:18
 ans	299/main.py	/^ans = Solution()$/;"	kind:variable	line:45
+ans	309/main.py	/^ans = Solution()$/;"	kind:variable	line:23
 ans	326/main.py	/^ans = Solution()$/;"	kind:variable	line:20
-ans	328/main.py	/^ans = Solution()$/;"	kind:variable	line:44
+ans	328/main.py	/^ans = Solution()$/;"	kind:variable	line:60
 ans	343/main.py	/^ans = Solution()$/;"	kind:variable	line:37
 ans	344/main.py	/^ans = Solution()$/;"	kind:variable	line:17
 ans	345/main.py	/^ans = Solution()$/;"	kind:variable	line:37
@@ -251,6 +258,7 @@ ans	414/main.py	/^ans = Solution()$/;"	kind:variable	line:32
 ans	419/main.py	/^ans = Solution()$/;"	kind:variable	line:40
 ans	436/main.py	/^ans = Solution()$/;"	kind:variable	line:33
 ans	441/main.py	/^ans = Solution()$/;"	kind:variable	line:22
+ans	452/main.py	/^ans = Solution()$/;"	kind:variable	line:41
 ans	453/main.py	/^ans = Solution()$/;"	kind:variable	line:18
 ans	455/main.py	/^ans = Solution()$/;"	kind:variable	line:61
 ans	459/main.py	/^ans = Solution()$/;"	kind:variable	line:19
@@ -289,6 +297,7 @@ findContentChildren	455/main.py	/^    def findContentChildren(self, g, s):$/;"	k
 findDuplicate	287/main.py	/^    def findDuplicate(self, nums):$/;"	kind:member	line:12
 findMedianSortedArrays	004/main.py	/^    def findMedianSortedArrays(self, nums1, nums2):$/;"	kind:member	line:8
 findMedianSortedArraysHelper	004/main.py	/^def findMedianSortedArraysHelper(nums1, nums2, start1, end1, start2, end2):$/;"	kind:function	line:21
+findMinArrowShots	452/main.py	/^    def findMinArrowShots(self, points):$/;"	kind:member	line:19
 findRepeatedDnaSequences	187/main.py	/^    def findRepeatedDnaSequences(self, s):$/;"	kind:member	line:15
 findRepeatedDnaSequences_k	187/main.py	/^def findRepeatedDnaSequences_k(s, k):$/;"	kind:function	line:22
 findRightInterval	436/main.py	/^    def findRightInterval(self, intervals):$/;"	kind:member	line:19
@@ -329,6 +338,7 @@ isSubsequence	392/main.py	/^    def isSubsequence(self, s, t):$/;"	kind:member	l
 islandPerimeter	463/main.py	/^    def islandPerimeter(self, grid):$/;"	kind:member	line:6
 json	flipboard/main.py	/^import json$/;"	kind:namespace	line:3
 kids	135/main.py	/^    kids = [rnd.randrange(10) for _ in range(rnd.randrange(15))]$/;"	kind:variable	line:32
+kthSmallest	230/main.py	/^    def kthSmallest(self, root, k):$/;"	kind:member	line:25
 kthSmallest	378/main.py	/^    def kthSmallest(self, matrix, k):$/;"	kind:member	line:19
 largestNumber	179/main.py	/^    def largestNumber(self, nums):$/;"	kind:member	line:18
 lengthOfLongestSubstring	003/main.py	/^    def lengthOfLongestSubstring(self, s):$/;"	kind:member	line:6
@@ -365,6 +375,7 @@ main.py	041/main.py	1;"	kind:file	line:1
 main.py	046/main.py	1;"	kind:file	line:1
 main.py	050/main.py	1;"	kind:file	line:1
 main.py	053/main.py	1;"	kind:file	line:1
+main.py	055/main.py	1;"	kind:file	line:1
 main.py	058/main.py	1;"	kind:file	line:1
 main.py	061/main.py	1;"	kind:file	line:1
 main.py	066/main.py	1;"	kind:file	line:1
@@ -417,6 +428,7 @@ main.py	205/main.py	1;"	kind:file	line:1
 main.py	206/main.py	1;"	kind:file	line:1
 main.py	217/main.py	1;"	kind:file	line:1
 main.py	226/main.py	1;"	kind:file	line:1
+main.py	230/main.py	1;"	kind:file	line:1
 main.py	231/main.py	1;"	kind:file	line:1
 main.py	235/main.py	1;"	kind:file	line:1
 main.py	237/main.py	1;"	kind:file	line:1
@@ -433,6 +445,7 @@ main.py	283/main.py	1;"	kind:file	line:1
 main.py	287/main.py	1;"	kind:file	line:1
 main.py	292/main.py	1;"	kind:file	line:1
 main.py	299/main.py	1;"	kind:file	line:1
+main.py	309/main.py	1;"	kind:file	line:1
 main.py	319/main.py	1;"	kind:file	line:1
 main.py	326/main.py	1;"	kind:file	line:1
 main.py	328/main.py	1;"	kind:file	line:1
@@ -472,6 +485,7 @@ main.py	415/main.py	1;"	kind:file	line:1
 main.py	419/main.py	1;"	kind:file	line:1
 main.py	436/main.py	1;"	kind:file	line:1
 main.py	441/main.py	1;"	kind:file	line:1
+main.py	452/main.py	1;"	kind:file	line:1
 main.py	453/main.py	1;"	kind:file	line:1
 main.py	455/main.py	1;"	kind:file	line:1
 main.py	459/main.py	1;"	kind:file	line:1
@@ -485,7 +499,7 @@ makeNumber	002/main.py	/^def makeNumber(a):$/;"	kind:function	line:43
 makeNumber	019/main.py	/^def makeNumber(a):$/;"	kind:function	line:31
 makeNumber	024/main.py	/^def makeNumber(a):$/;"	kind:function	line:33
 makeNumber	141/main.py	/^def makeNumber(a):$/;"	kind:function	line:13
-makeNumber	328/main.py	/^def makeNumber(a):$/;"	kind:function	line:34
+makeNumber	328/main.py	/^def makeNumber(a):$/;"	kind:function	line:50
 make_list	382/main.py	/^def make_list(a):$/;"	kind:function	line:16
 make_tree	094/main.py	/^def make_tree(ls):$/;"	kind:function	line:36
 make_tree	102/main.py	/^def make_tree(ls):$/;"	kind:function	line:19
@@ -494,6 +508,7 @@ make_tree	110/main.py	/^def make_tree(ls):$/;"	kind:function	line:7
 make_tree	144/main.py	/^def make_tree(ls):$/;"	kind:function	line:37
 make_tree	145/main.py	/^def make_tree(ls):$/;"	kind:function	line:33
 make_tree	199/main.py	/^def make_tree(ls):$/;"	kind:function	line:14
+make_tree	230/main.py	/^def make_tree(ls):$/;"	kind:function	line:33
 make_tree	235/main.py	/^def make_tree(ls):$/;"	kind:function	line:31
 make_tree	leafEqual/main.py	/^def make_tree(ls):$/;"	kind:function	line:7
 math	204/main.py	/^import math$/;"	kind:namespace	line:4
@@ -502,6 +517,7 @@ math	414/main.py	/^import math$/;"	kind:namespace	line:2
 math	462/main.py	/^import math$/;"	kind:namespace	line:19
 maxDepth	104/main.py	/^    def maxDepth(self, root):$/;"	kind:member	line:15
 maxProfit	121/main.py	/^    def maxProfit(self, prices):$/;"	kind:member	line:19
+maxProfit	309/main.py	/^    def maxProfit(self, prices):$/;"	kind:member	line:16
 maxRotateFunction	396/main.py	/^    def maxRotateFunction(self, A):$/;"	kind:member	line:12
 maxSubArray	053/main.py	/^    def maxSubArray(self, nums):$/;"	kind:member	line:14
 median	004/main.py	/^def median(ls):$/;"	kind:function	line:24
