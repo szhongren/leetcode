@@ -9,9 +9,11 @@ ListNode	002/main.py	/^class ListNode(object):$/;"	kind:class	line:6
 ListNode	019/main.py	/^class ListNode(object):$/;"	kind:class	line:5
 ListNode	024/main.py	/^class ListNode(object):$/;"	kind:class	line:10
 ListNode	141/main.py	/^class ListNode(object):$/;"	kind:class	line:8
+ListNode	203/main.py	/^class ListNode(object):$/;"	kind:class	line:10
 ListNode	206/main.py	/^class ListNode(object):$/;"	kind:class	line:5
 ListNode	328/main.py	/^class ListNode(object):$/;"	kind:class	line:16
 ListNode	382/main.py	/^class ListNode(object):$/;"	kind:class	line:11
+Queue	232/main.py	/^class Queue(object):$/;"	kind:class	line:14
 RandomizedSet	380/main.py	/^class RandomizedSet(object):$/;"	kind:class	line:36
 Solution	001/main.py	/^class Solution(object):$/;"	kind:class	line:7
 Solution	002/main.py	/^class Solution(object):$/;"	kind:class	line:11
@@ -28,17 +30,23 @@ Solution	019/main.py	/^class Solution(object):$/;"	kind:class	line:10
 Solution	021/main.py	/^class Solution(object):$/;"	kind:class	line:11
 Solution	024/main.py	/^class Solution(object):$/;"	kind:class	line:15
 Solution	026/main.py	/^class Solution(object):$/;"	kind:class	line:12
+Solution	027/main.py	/^class Solution(object):$/;"	kind:class	line:14
 Solution	028/main.py	/^class Solution(object):$/;"	kind:class	line:7
 Solution	033/main.py	/^class Solution(object):$/;"	kind:class	line:11
 Solution	035/main.py	/^class Solution(object):$/;"	kind:class	line:13
+Solution	036/main.py	/^class Solution(object):$/;"	kind:class	line:13
 Solution	038/main.py	/^class Solution(object):$/;"	kind:class	line:26
 Solution	046/main.py	/^class Solution(object):$/;"	kind:class	line:8
 Solution	050/main.py	/^class Solution(object):$/;"	kind:class	line:8
 Solution	053/main.py	/^class Solution(object):$/;"	kind:class	line:13
+Solution	055/main.py	/^class Solution(object):$/;"	kind:class	line:14
+Solution	062/main.py	/^class Solution(object):$/;"	kind:class	line:9
+Solution	063/main.py	/^class Solution(object):$/;"	kind:class	line:21
 Solution	066/main.py	/^class Solution(object):$/;"	kind:class	line:7
 Solution	067/main.py	/^class Solution(object):$/;"	kind:class	line:10
 Solution	074/main.py	/^class Solution(object):$/;"	kind:class	line:7
 Solution	075/main.py	/^class Solution(object):$/;"	kind:class	line:18
+Solution	077/main.py	/^class Solution(object):$/;"	kind:class	line:17
 Solution	078/main.py	/^class Solution(object):$/;"	kind:class	line:6
 Solution	080/main.py	/^class Solution(object):$/;"	kind:class	line:13
 Solution	089/main.py	/^class Solution(object):$/;"	kind:class	line:20
@@ -51,6 +59,7 @@ Solution	110/main.py	/^class Solution(object):$/;"	kind:class	line:50
 Solution	119/main.py	/^class Solution(object):$/;"	kind:class	line:11
 Solution	120/main.py	/^class Solution(object):$/;"	kind:class	line:14
 Solution	121/main.py	/^class Solution(object):$/;"	kind:class	line:18
+Solution	129/main.py	/^class Solution(object):$/;"	kind:class	line:54
 Solution	135/main.py	/^class Solution(object):$/;"	kind:class	line:13
 Solution	136/main.py	/^class Solution(object):$/;"	kind:class	line:5
 Solution	137/main.py	/^class Solution(object):$/;"	kind:class	line:8
@@ -58,6 +67,7 @@ Solution	141/main.py	/^class Solution(object):$/;"	kind:class	line:24
 Solution	144/main.py	/^class Solution(object):$/;"	kind:class	line:13
 Solution	145/main.py	/^class Solution(object):$/;"	kind:class	line:13
 Solution	167/main.py	/^class Solution(object):$/;"	kind:class	line:12
+Solution	168/main.py	/^class Solution(object):$/;"	kind:class	line:15
 Solution	169/main.py	/^class Solution(object):$/;"	kind:class	line:7
 Solution	171/main.py	/^class Solution(object):$/;"	kind:class	line:9
 Solution	172/main.py	/^class Solution(object):$/;"	kind:class	line:14
@@ -67,10 +77,12 @@ Solution	198/main.py	/^class Solution(object):$/;"	kind:class	line:7
 Solution	199/main.py	/^class Solution(object):$/;"	kind:class	line:36
 Solution	201/main.py	/^class Solution(object):$/;"	kind:class	line:7
 Solution	202/main.py	/^class Solution(object):$/;"	kind:class	line:14
+Solution	203/main.py	/^class Solution(object):$/;"	kind:class	line:25
 Solution	204/main.py	/^class Solution(object):$/;"	kind:class	line:6
 Solution	205/main.py	/^class Solution(object):$/;"	kind:class	line:16
 Solution	206/main.py	/^class Solution(object):$/;"	kind:class	line:10
 Solution	217/main.py	/^class Solution(object):$/;"	kind:class	line:5
+Solution	223/main.py	/^class Solution(object):$/;"	kind:class	line:7
 Solution	226/main.py	/^class Solution(object):$/;"	kind:class	line:5
 Solution	230/main.py	/^class Solution(object):$/;"	kind:class	line:24
 Solution	231/main.py	/^class Solution(object):$/;"	kind:class	line:5
@@ -97,6 +109,7 @@ Solution	350/main.py	/^class Solution(object):$/;"	kind:class	line:8
 Solution	357/main.py	/^class Solution(object):$/;"	kind:class	line:16
 Solution	367/main.py	/^class Solution(object):$/;"	kind:class	line:7
 Solution	371/main.py	/^class Solution(object):$/;"	kind:class	line:8
+Solution	377/main.py	/^class Solution(object):$/;"	kind:class	line:27
 Solution	378/main.py	/^class Solution(object):$/;"	kind:class	line:18
 Solution	382/main.py	/^class Solution(object):$/;"	kind:class	line:26
 Solution	383/main.py	/^class Solution(object):$/;"	kind:class	line:10
@@ -120,7 +133,9 @@ Solution	414/main.py	/^class Solution(object):$/;"	kind:class	line:4
 Solution	415/main.py	/^class Solution(object):$/;"	kind:class	line:18
 Solution	419/main.py	/^class Solution(object):$/;"	kind:class	line:21
 Solution	436/main.py	/^class Solution(object):$/;"	kind:class	line:18
+Solution	438/main.py	/^class Solution(object):$/;"	kind:class	line:41
 Solution	441/main.py	/^class Solution(object):$/;"	kind:class	line:9
+Solution	447/main.py	/^class Solution(object):$/;"	kind:class	line:17
 Solution	452/main.py	/^class Solution(object):$/;"	kind:class	line:18
 Solution	453/main.py	/^class Solution(object):$/;"	kind:class	line:5
 Solution	455/main.py	/^class Solution(object):$/;"	kind:class	line:37
@@ -133,6 +148,7 @@ TreeNode	094/main.py	/^class TreeNode(object):$/;"	kind:class	line:6
 TreeNode	102/main.py	/^class TreeNode(object):$/;"	kind:class	line:35
 TreeNode	107/main.py	/^class TreeNode(object):$/;"	kind:class	line:35
 TreeNode	110/main.py	/^class TreeNode(object):$/;"	kind:class	line:44
+TreeNode	129/main.py	/^class TreeNode(object):$/;"	kind:class	line:20
 TreeNode	144/main.py	/^class TreeNode(object):$/;"	kind:class	line:7
 TreeNode	145/main.py	/^class TreeNode(object):$/;"	kind:class	line:7
 TreeNode	199/main.py	/^class TreeNode(object):$/;"	kind:class	line:30
@@ -146,12 +162,15 @@ __init__	094/main.py	/^    def __init__(self, x):$/;"	kind:member	line:7
 __init__	102/main.py	/^    def __init__(self, x):$/;"	kind:member	line:36
 __init__	107/main.py	/^    def __init__(self, x):$/;"	kind:member	line:36
 __init__	110/main.py	/^    def __init__(self, x):$/;"	kind:member	line:45
+__init__	129/main.py	/^    def __init__(self, x):$/;"	kind:member	line:21
 __init__	141/main.py	/^    def __init__(self, x):$/;"	kind:member	line:9
 __init__	144/main.py	/^    def __init__(self, x):$/;"	kind:member	line:8
 __init__	145/main.py	/^    def __init__(self, x):$/;"	kind:member	line:8
 __init__	199/main.py	/^    def __init__(self, x):$/;"	kind:member	line:31
+__init__	203/main.py	/^    def __init__(self, x):$/;"	kind:member	line:11
 __init__	206/main.py	/^    def __init__(self, x):$/;"	kind:member	line:6
 __init__	230/main.py	/^    def __init__(self, x):$/;"	kind:member	line:19
+__init__	232/main.py	/^    def __init__(self):$/;"	kind:member	line:15
 __init__	235/main.py	/^    def __init__(self, x):$/;"	kind:member	line:9
 __init__	328/main.py	/^    def __init__(self, x):$/;"	kind:member	line:17
 __init__	380/main.py	/^    def __init__(self):$/;"	kind:member	line:38
@@ -180,30 +199,38 @@ ans	018/main.py	/^ans = Solution()$/;"	kind:variable	line:20
 ans	019/main.py	/^ans = Solution()$/;"	kind:variable	line:41
 ans	024/main.py	/^ans = Solution()$/;"	kind:variable	line:43
 ans	026/main.py	/^ans = Solution()$/;"	kind:variable	line:40
+ans	027/main.py	/^ans = Solution()$/;"	kind:variable	line:31
 ans	033/main.py	/^ans = Solution()$/;"	kind:variable	line:39
 ans	035/main.py	/^ans = Solution()$/;"	kind:variable	line:32
+ans	036/main.py	/^ans = Solution()$/;"	kind:variable	line:22
 ans	038/main.py	/^ans = Solution()$/;"	kind:variable	line:41
 ans	046/main.py	/^ans = Solution()$/;"	kind:variable	line:29
 ans	050/main.py	/^ans = Solution()$/;"	kind:variable	line:27
 ans	053/main.py	/^ans = Solution()$/;"	kind:variable	line:36
+ans	055/main.py	/^ans = Solution()$/;"	kind:variable	line:31
+ans	062/main.py	/^ans = Solution()$/;"	kind:variable	line:22
+ans	063/main.py	/^ans = Solution()$/;"	kind:variable	line:48
 ans	066/main.py	/^ans = Solution()$/;"	kind:variable	line:25
 ans	067/main.py	/^ans = Solution()$/;"	kind:variable	line:56
 ans	075/main.py	/^ans = Solution()$/;"	kind:variable	line:39
+ans	077/main.py	/^ans = Solution()$/;"	kind:variable	line:28
 ans	080/main.py	/^ans = Solution()$/;"	kind:variable	line:41
 ans	089/main.py	/^ans = Solution()$/;"	kind:variable	line:34
-ans	094/main.py	/^ans = Solution()$/;"	kind:variable	line:51
+ans	094/main.py	/^ans = Solution()$/;"	kind:variable	line:52
 ans	102/main.py	/^ans = Solution()$/;"	kind:variable	line:66
 ans	107/main.py	/^ans = Solution()$/;"	kind:variable	line:68
 ans	110/main.py	/^ans = Solution()$/;"	kind:variable	line:63
 ans	119/main.py	/^ans = Solution()$/;"	kind:variable	line:26
 ans	120/main.py	/^ans = Solution()$/;"	kind:variable	line:27
 ans	121/main.py	/^ans = Solution()$/;"	kind:variable	line:35
+ans	129/main.py	/^ans = Solution()$/;"	kind:variable	line:65
 ans	135/main.py	/^ans = Solution()$/;"	kind:variable	line:30
 ans	136/main.py	/^ans = Solution()$/;"	kind:variable	line:16
 ans	137/main.py	/^ans = Solution()$/;"	kind:variable	line:26
 ans	144/main.py	/^ans = Solution()$/;"	kind:variable	line:52
 ans	145/main.py	/^ans = Solution()$/;"	kind:variable	line:48
 ans	167/main.py	/^ans = Solution()$/;"	kind:variable	line:31
+ans	168/main.py	/^ans = Solution()$/;"	kind:variable	line:23
 ans	171/main.py	/^ans = Solution()$/;"	kind:variable	line:24
 ans	172/main.py	/^ans = Solution()$/;"	kind:variable	line:27
 ans	179/main.py	/^ans = Solution()$/;"	kind:variable	line:26
@@ -211,9 +238,11 @@ ans	187/main.py	/^ans = Solution()$/;"	kind:variable	line:44
 ans	198/main.py	/^ans = Solution()$/;"	kind:variable	line:19
 ans	199/main.py	/^ans = Solution()$/;"	kind:variable	line:61
 ans	201/main.py	/^ans = Solution()$/;"	kind:variable	line:19
+ans	203/main.py	/^ans = Solution()$/;"	kind:variable	line:52
 ans	204/main.py	/^ans = Solution()$/;"	kind:variable	line:40
 ans	205/main.py	/^ans = Solution()$/;"	kind:variable	line:36
-ans	230/main.py	/^ans = Solution()$/;"	kind:variable	line:48
+ans	223/main.py	/^ans = Solution()$/;"	kind:variable	line:27
+ans	230/main.py	/^ans = Solution()$/;"	kind:variable	line:64
 ans	231/main.py	/^ans = Solution()$/;"	kind:variable	line:25
 ans	235/main.py	/^ans = Solution()$/;"	kind:variable	line:46
 ans	241/main.py	/^ans = Solution()$/;"	kind:variable	line:36
@@ -230,11 +259,12 @@ ans	328/main.py	/^ans = Solution()$/;"	kind:variable	line:60
 ans	343/main.py	/^ans = Solution()$/;"	kind:variable	line:37
 ans	344/main.py	/^ans = Solution()$/;"	kind:variable	line:17
 ans	345/main.py	/^ans = Solution()$/;"	kind:variable	line:37
-ans	347/main.py	/^ans = Solution()$/;"	kind:variable	line:28
+ans	347/main.py	/^ans = Solution()$/;"	kind:variable	line:49
 ans	349/main.py	/^ans = Solution()$/;"	kind:variable	line:25
 ans	350/main.py	/^ans = Solution()$/;"	kind:variable	line:34
 ans	357/main.py	/^ans = Solution()$/;"	kind:variable	line:31
 ans	371/main.py	/^ans = Solution()$/;"	kind:variable	line:24
+ans	377/main.py	/^ans = Solution()$/;"	kind:variable	line:42
 ans	378/main.py	/^ans = Solution()$/;"	kind:variable	line:51
 ans	380/main.py	/^ans = RandomizedSet()$/;"	kind:variable	line:91
 ans	382/main.py	/^ans = Solution(make_list(54321))$/;"	kind:variable	line:53
@@ -257,7 +287,9 @@ ans	413/main.py	/^ans = Solution()$/;"	kind:variable	line:42
 ans	414/main.py	/^ans = Solution()$/;"	kind:variable	line:32
 ans	419/main.py	/^ans = Solution()$/;"	kind:variable	line:40
 ans	436/main.py	/^ans = Solution()$/;"	kind:variable	line:33
+ans	438/main.py	/^ans = Solution()$/;"	kind:variable	line:100
 ans	441/main.py	/^ans = Solution()$/;"	kind:variable	line:22
+ans	447/main.py	/^ans = Solution()$/;"	kind:variable	line:30
 ans	452/main.py	/^ans = Solution()$/;"	kind:variable	line:41
 ans	453/main.py	/^ans = Solution()$/;"	kind:variable	line:18
 ans	455/main.py	/^ans = Solution()$/;"	kind:variable	line:61
@@ -273,10 +305,15 @@ canConstruct	383/main.py	/^    def canConstruct(self, ransomNote, magazine):$/;"
 canCross	403/main.py	/^    def canCross(self, stones):$/;"	kind:member	line:14
 canCrossHelper	403/main.py	/^    def canCrossHelper(self, curr, jump):$/;"	kind:member	line:23
 canIWin	can_i_win/main.py	/^    def canIWin(self, maxChoosableInteger, desiredTotal):$/;"	kind:member	line:14
+canJump	055/main.py	/^    def canJump(self, nums):$/;"	kind:member	line:15
 canWinNim	292/main.py	/^    def canWinNim(self, n):$/;"	kind:member	line:10
 candy	135/main.py	/^    def candy(self, ratings):$/;"	kind:member	line:14
+combinationSum4	377/main.py	/^    def combinationSum4(self, nums, target):$/;"	kind:member	line:28
+combine	077/main.py	/^    def combine(self, n, k):$/;"	kind:member	line:18
+computeArea	223/main.py	/^    def computeArea(self, A, B, C, D, E, F, G, H):$/;"	kind:member	line:8
 containsDuplicate	217/main.py	/^    def containsDuplicate(self, nums):$/;"	kind:member	line:6
 convert	006/main.py	/^    def convert(self, s, numRows):$/;"	kind:member	line:14
+convertToTitle	168/main.py	/^    def convertToTitle(self, n):$/;"	kind:member	line:16
 countAndSay	038/main.py	/^    def countAndSay(self, n):$/;"	kind:member	line:27
 countBattleships	419/main.py	/^    def countBattleships(self, board):$/;"	kind:member	line:22
 countBits	401/main.py	/^def countBits(v):$/;"	kind:function	line:9
@@ -285,14 +322,17 @@ countPrimes	204/main.py	/^    def countPrimes(self, n):$/;"	kind:member	line:7
 data	flipboard/main.py	/^data = json.loads(f.read().decode("utf-8"))$/;"	kind:variable	line:9
 decodeString	394/main.py	/^    def decodeString(self, s):$/;"	kind:member	line:18
 deleteNode	237/main.py	/^    def deleteNode(self, node):$/;"	kind:member	line:14
+dfs	129/main.py	/^def dfs(root, num, sum):$/;"	kind:function	line:41
 diffWaysToCompute	241/main.py	/^    def diffWaysToCompute(self, input):$/;"	kind:member	line:29
 digit_ch	415/main.py	/^def digit_ch(v):$/;"	kind:function	line:15
 digit_sum	202/main.py	/^def digit_sum(n):$/;"	kind:function	line:28
 digit_val	415/main.py	/^def digit_val(ch):$/;"	kind:function	line:12
 dup	test.py	/^    def dup(self, l):$/;"	kind:member	line:2
+empty	232/main.py	/^    def empty(self):$/;"	kind:member	line:58
 eratosthenes	204/main.py	/^def eratosthenes(ls):$/;"	kind:function	line:20
 f	flipboard/main.py	/^f = url_req.urlopen(site)$/;"	kind:variable	line:7
 fact	172/main.py	/^def fact(n):$/;"	kind:function	line:7
+findAnagrams	438/main.py	/^    def findAnagrams(self, s, p):$/;"	kind:member	line:42
 findContentChildren	455/main.py	/^    def findContentChildren(self, g, s):$/;"	kind:member	line:38
 findDuplicate	287/main.py	/^    def findDuplicate(self, nums):$/;"	kind:member	line:12
 findMedianSortedArrays	004/main.py	/^    def findMedianSortedArrays(self, nums1, nums2):$/;"	kind:member	line:8
@@ -335,6 +375,7 @@ isPowerOfThree	326/main.py	/^    def isPowerOfThree(self, n):$/;"	kind:member	li
 isPowerOfTwo	231/main.py	/^    def isPowerOfTwo(self, n):$/;"	kind:member	line:6
 isSameTree	100/main.py	/^    def isSameTree(self, p, q):$/;"	kind:member	line:15
 isSubsequence	392/main.py	/^    def isSubsequence(self, s, t):$/;"	kind:member	line:29
+isValidSudoku	036/main.py	/^    def isValidSudoku(self, board):$/;"	kind:member	line:14
 islandPerimeter	463/main.py	/^    def islandPerimeter(self, grid):$/;"	kind:member	line:6
 json	flipboard/main.py	/^import json$/;"	kind:namespace	line:3
 kids	135/main.py	/^    kids = [rnd.randrange(10) for _ in range(rnd.randrange(15))]$/;"	kind:variable	line:32
@@ -367,9 +408,11 @@ main.py	020/main.py	1;"	kind:file	line:1
 main.py	021/main.py	1;"	kind:file	line:1
 main.py	024/main.py	1;"	kind:file	line:1
 main.py	026/main.py	1;"	kind:file	line:1
+main.py	027/main.py	1;"	kind:file	line:1
 main.py	028/main.py	1;"	kind:file	line:1
 main.py	033/main.py	1;"	kind:file	line:1
 main.py	035/main.py	1;"	kind:file	line:1
+main.py	036/main.py	1;"	kind:file	line:1
 main.py	038/main.py	1;"	kind:file	line:1
 main.py	041/main.py	1;"	kind:file	line:1
 main.py	046/main.py	1;"	kind:file	line:1
@@ -378,12 +421,15 @@ main.py	053/main.py	1;"	kind:file	line:1
 main.py	055/main.py	1;"	kind:file	line:1
 main.py	058/main.py	1;"	kind:file	line:1
 main.py	061/main.py	1;"	kind:file	line:1
+main.py	062/main.py	1;"	kind:file	line:1
+main.py	063/main.py	1;"	kind:file	line:1
 main.py	066/main.py	1;"	kind:file	line:1
 main.py	067/main.py	1;"	kind:file	line:1
 main.py	070/main.py	1;"	kind:file	line:1
 main.py	073/main.py	1;"	kind:file	line:1
 main.py	074/main.py	1;"	kind:file	line:1
 main.py	075/main.py	1;"	kind:file	line:1
+main.py	077/main.py	1;"	kind:file	line:1
 main.py	078/main.py	1;"	kind:file	line:1
 main.py	080/main.py	1;"	kind:file	line:1
 main.py	083/main.py	1;"	kind:file	line:1
@@ -402,6 +448,7 @@ main.py	119/main.py	1;"	kind:file	line:1
 main.py	120/main.py	1;"	kind:file	line:1
 main.py	121/main.py	1;"	kind:file	line:1
 main.py	122/main.py	1;"	kind:file	line:1
+main.py	129/main.py	1;"	kind:file	line:1
 main.py	135/main.py	1;"	kind:file	line:1
 main.py	136/main.py	1;"	kind:file	line:1
 main.py	137/main.py	1;"	kind:file	line:1
@@ -411,6 +458,7 @@ main.py	145/main.py	1;"	kind:file	line:1
 main.py	153/main.py	1;"	kind:file	line:1
 main.py	165/main.py	1;"	kind:file	line:1
 main.py	167/main.py	1;"	kind:file	line:1
+main.py	168/main.py	1;"	kind:file	line:1
 main.py	169/main.py	1;"	kind:file	line:1
 main.py	171/main.py	1;"	kind:file	line:1
 main.py	172/main.py	1;"	kind:file	line:1
@@ -423,13 +471,16 @@ main.py	198/main.py	1;"	kind:file	line:1
 main.py	199/main.py	1;"	kind:file	line:1
 main.py	201/main.py	1;"	kind:file	line:1
 main.py	202/main.py	1;"	kind:file	line:1
+main.py	203/main.py	1;"	kind:file	line:1
 main.py	204/main.py	1;"	kind:file	line:1
 main.py	205/main.py	1;"	kind:file	line:1
 main.py	206/main.py	1;"	kind:file	line:1
 main.py	217/main.py	1;"	kind:file	line:1
+main.py	223/main.py	1;"	kind:file	line:1
 main.py	226/main.py	1;"	kind:file	line:1
 main.py	230/main.py	1;"	kind:file	line:1
 main.py	231/main.py	1;"	kind:file	line:1
+main.py	232/main.py	1;"	kind:file	line:1
 main.py	235/main.py	1;"	kind:file	line:1
 main.py	237/main.py	1;"	kind:file	line:1
 main.py	238/main.py	1;"	kind:file	line:1
@@ -460,6 +511,7 @@ main.py	350/main.py	1;"	kind:file	line:1
 main.py	357/main.py	1;"	kind:file	line:1
 main.py	367/main.py	1;"	kind:file	line:1
 main.py	371/main.py	1;"	kind:file	line:1
+main.py	377/main.py	1;"	kind:file	line:1
 main.py	378/main.py	1;"	kind:file	line:1
 main.py	380/main.py	1;"	kind:file	line:1
 main.py	382/main.py	1;"	kind:file	line:1
@@ -484,7 +536,9 @@ main.py	414/main.py	1;"	kind:file	line:1
 main.py	415/main.py	1;"	kind:file	line:1
 main.py	419/main.py	1;"	kind:file	line:1
 main.py	436/main.py	1;"	kind:file	line:1
+main.py	438/main.py	1;"	kind:file	line:1
 main.py	441/main.py	1;"	kind:file	line:1
+main.py	447/main.py	1;"	kind:file	line:1
 main.py	452/main.py	1;"	kind:file	line:1
 main.py	453/main.py	1;"	kind:file	line:1
 main.py	455/main.py	1;"	kind:file	line:1
@@ -499,16 +553,18 @@ makeNumber	002/main.py	/^def makeNumber(a):$/;"	kind:function	line:43
 makeNumber	019/main.py	/^def makeNumber(a):$/;"	kind:function	line:31
 makeNumber	024/main.py	/^def makeNumber(a):$/;"	kind:function	line:33
 makeNumber	141/main.py	/^def makeNumber(a):$/;"	kind:function	line:13
+makeNumber	203/main.py	/^def makeNumber(a):$/;"	kind:function	line:15
 makeNumber	328/main.py	/^def makeNumber(a):$/;"	kind:function	line:50
 make_list	382/main.py	/^def make_list(a):$/;"	kind:function	line:16
 make_tree	094/main.py	/^def make_tree(ls):$/;"	kind:function	line:36
 make_tree	102/main.py	/^def make_tree(ls):$/;"	kind:function	line:19
 make_tree	107/main.py	/^def make_tree(ls):$/;"	kind:function	line:19
 make_tree	110/main.py	/^def make_tree(ls):$/;"	kind:function	line:7
+make_tree	129/main.py	/^def make_tree(ls):$/;"	kind:function	line:26
 make_tree	144/main.py	/^def make_tree(ls):$/;"	kind:function	line:37
 make_tree	145/main.py	/^def make_tree(ls):$/;"	kind:function	line:33
 make_tree	199/main.py	/^def make_tree(ls):$/;"	kind:function	line:14
-make_tree	230/main.py	/^def make_tree(ls):$/;"	kind:function	line:33
+make_tree	230/main.py	/^def make_tree(ls):$/;"	kind:function	line:49
 make_tree	235/main.py	/^def make_tree(ls):$/;"	kind:function	line:31
 make_tree	leafEqual/main.py	/^def make_tree(ls):$/;"	kind:function	line:7
 math	204/main.py	/^import math$/;"	kind:namespace	line:4
@@ -536,6 +592,7 @@ next_seq	038/main.py	/^def next_seq(prev):$/;"	kind:function	line:13
 numSquares	279/main.py	/^    def numSquares(self, n):$/;"	kind:member	line:9
 num_bits	401/main.py	/^num_bits = [countBits(i) for i in range(60)]$/;"	kind:variable	line:21
 numberOfArithmeticSlices	413/main.py	/^    def numberOfArithmeticSlices(self, A):$/;"	kind:member	line:22
+numberOfBoomerangs	447/main.py	/^    def numberOfBoomerangs(self, points):$/;"	kind:member	line:18
 nums1	004/main.py	/^nums1 = [1, 2]$/;"	kind:variable	line:36
 nums1	004/main.py	/^nums1 = [1, 3]$/;"	kind:variable	line:33
 nums2	004/main.py	/^nums2 = [2]$/;"	kind:variable	line:34
@@ -543,12 +600,15 @@ nums2	004/main.py	/^nums2 = [3, 4]$/;"	kind:variable	line:37
 oddEvenList	328/main.py	/^    def oddEvenList(self, head):$/;"	kind:member	line:22
 parsePair	241/main.py	/^def parsePair(str):$/;"	kind:function	line:24
 paths	403/main.py	/^    paths = {}$/;"	kind:variable	line:12
+peek	232/main.py	/^    def peek(self):$/;"	kind:member	line:47
 permute	046/main.py	/^    def permute(self, nums):$/;"	kind:member	line:9
 pick	398/main.py	/^    def pick(self, target):$/;"	kind:member	line:32
 plusOne	066/main.py	/^    def plusOne(self, digits):$/;"	kind:member	line:8
+pop	232/main.py	/^    def pop(self):$/;"	kind:member	line:36
 postorderTraversal	145/main.py	/^    def postorderTraversal(self, root):$/;"	kind:member	line:14
 preorderTraversal	144/main.py	/^    def preorderTraversal(self, root):$/;"	kind:member	line:14
 preorder_leaves	leafEqual/main.py	/^def preorder_leaves(tr):$/;"	kind:function	line:22
+push	232/main.py	/^    def push(self, x):$/;"	kind:member	line:23
 rangeBitwiseAnd	201/main.py	/^    def rangeBitwiseAnd(self, m, n):$/;"	kind:member	line:8
 readBinaryWatch	401/main.py	/^    def readBinaryWatch(self, num):$/;"	kind:member	line:24
 reconstructQueue	406/main.py	/^    def reconstructQueue(self, people):$/;"	kind:member	line:17
@@ -556,6 +616,8 @@ recur_sum	018/main.py	/^def recur_sum(nums, target, count):$/;"	kind:function	li
 remove	380/main.py	/^    def remove(self, val):$/;"	kind:member	line:61
 removeDuplicates	026/main.py	/^    def removeDuplicates(self, nums):$/;"	kind:member	line:13
 removeDuplicates	080/main.py	/^    def removeDuplicates(self, nums):$/;"	kind:member	line:14
+removeElement	027/main.py	/^    def removeElement(self, nums, val):$/;"	kind:member	line:15
+removeElements	203/main.py	/^    def removeElements(self, head, val):$/;"	kind:member	line:26
 removeNthFromEnd	019/main.py	/^    def removeNthFromEnd(self, head, n):$/;"	kind:member	line:11
 repeatedSubstringPattern	459/main.py	/^    def repeatedSubstringPattern(self, str):$/;"	kind:member	line:7
 res	018/main.py	/^res = recur_sum([1, 0, -1, 0, -2, 2], 0, 1)$/;"	kind:variable	line:22
@@ -582,6 +644,7 @@ search	033/main.py	/^    def search(self, nums, target):$/;"	kind:member	line:12
 searchInsert	035/main.py	/^    def searchInsert(self, nums, target):$/;"	kind:member	line:14
 searchMatrix	074/main.py	/^    def searchMatrix(self, matrix, target):$/;"	kind:member	line:8
 shuffle	384/main.py	/^    def shuffle(self):$/;"	kind:member	line:39
+sig_equal	438/main.py	/^def sig_equal(l, s):$/;"	kind:function	line:33
 singleNumber	136/main.py	/^    def singleNumber(self, nums):$/;"	kind:member	line:6
 singleNumber	137/main.py	/^    def singleNumber(self, nums):$/;"	kind:member	line:9
 site	flipboard/main.py	/^site = "https:\/\/challenge.flipboard.com"$/;"	kind:variable	line:5
@@ -590,6 +653,7 @@ stones	403/main.py	/^    stones = None$/;"	kind:variable	line:13
 strStr	028/main.py	/^    def strStr(self, haystack, needle):$/;"	kind:member	line:8
 subsets	078/main.py	/^    def subsets(self, nums):$/;"	kind:member	line:7
 sumLeftLeavesHelper	404/main.py	/^def sumLeftLeavesHelper(root, left):$/;"	kind:function	line:20
+sumNumbers	129/main.py	/^    def sumNumbers(self, root):$/;"	kind:member	line:55
 sumOfLeftLeaves	404/main.py	/^    def sumOfLeftLeaves(self, root):$/;"	kind:member	line:13
 swapPairs	024/main.py	/^    def swapPairs(self, head):$/;"	kind:member	line:16
 sys	050/main.py	/^import sys$/;"	kind:namespace	line:5
@@ -601,7 +665,7 @@ titleToNumber	171/main.py	/^    def titleToNumber(self, s):$/;"	kind:member	line
 toHex	405/main.py	/^    def toHex(self, num):$/;"	kind:member	line:28
 topKFrequent	347/main.py	/^    def topKFrequent(self, nums, k):$/;"	kind:member	line:13
 trailingZeroes	172/main.py	/^    def trailingZeroes(self, n):$/;"	kind:member	line:15
-tree	094/main.py	/^tree = make_tree([6, 2, 8, 0, 4, 7, 9, None, None, 3, 5])$/;"	kind:variable	line:52
+tree	094/main.py	/^tree = make_tree([6, 2, 8, 0, 4, 7, 9, None, None, 3, 5])$/;"	kind:variable	line:53
 tree	110/main.py	/^tree = make_tree([3, 1, None, None, 2])$/;"	kind:variable	line:65
 tree	144/main.py	/^tree = make_tree([6, 2, 8, 0, 4, 7, 9, None, None, 3, 5])$/;"	kind:variable	line:53
 tree	145/main.py	/^tree = make_tree([6, 2, 8, 0, 4, 7, 9, None, None, 3, 5])$/;"	kind:variable	line:49
@@ -610,6 +674,8 @@ treeMaxHeight	110/main.py	/^def treeMaxHeight(tr):$/;"	kind:function	line:33
 treeMinHeight	110/main.py	/^def treeMinHeight(tr):$/;"	kind:function	line:22
 twoSum	001/main.py	/^  def twoSum(self, nums, target):$/;"	kind:member	line:8
 twoSum	167/main.py	/^    def twoSum(self, numbers, target):$/;"	kind:member	line:13
+uniquePaths	062/main.py	/^    def uniquePaths(self, m, n):$/;"	kind:member	line:10
+uniquePathsWithObstacles	063/main.py	/^    def uniquePathsWithObstacles(self, obstacleGrid):$/;"	kind:member	line:22
 url_req	flipboard/main.py	/^import urllib.request as url_req$/;"	kind:namespace	line:1
 url_res	flipboard/main.py	/^import urllib.response as url_res$/;"	kind:namespace	line:2
 urllib	flipboard/main.py	/^import urllib.request as url_req$/;"	kind:namespace	line:1
