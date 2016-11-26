@@ -10,7 +10,10 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-
+        if x <= 1:
+            return x
+        else:
+            start = 0:
 
 ans = Solution()
 for i in range(10):

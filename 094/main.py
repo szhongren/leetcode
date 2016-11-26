@@ -34,7 +34,6 @@ class Solution(object):
         return result
 
 def make_tree(ls):
-
     """
     :type ls: List[int]
     :rtype: TreeNode
