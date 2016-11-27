@@ -29,7 +29,6 @@ class Solution(object):
                     res.append(add)
                     start = nums[i]
                     if_range = False
-
         return res
 
 ans = Solution()
