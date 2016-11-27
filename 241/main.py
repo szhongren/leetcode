@@ -21,9 +21,13 @@ Input: "2*3-4*5"
 Output: [-34, -14, -10, -10, 10]
 """
 
-def parsePair(str):
-    if len(str) == 1:
-        pass
+def calc(a, b, op):
+    if op == '+':
+        return a + b
+    elif op == '-':
+        return a - b
+    elif op == '*':
+        return a * b
 
 class Solution(object):
     def diffWaysToCompute(self, input):
@@ -31,7 +35,26 @@ class Solution(object):
         :type input: str
         :rtype: List[int]
         """
-        pass
+        res = []
+        if len(input) == 0:
+            return res
+        for i in range(len(input)):
+            curr = input[i]
+
+            if curr.isdigit():
+               continue
+
+            left = self.diffWaysToCompute(input[0:i])
+            right = self.diffWaysToCompute(input[i+1:])
+
+            for a in left:
+                for b in right:
+                    res.append(calc(a, b, curr))
+
+        if len(res) == 0:
+            res.append(int(input))
+
+        return res
 
 ans = Solution()
 print(ans.diffWaysToCompute("2-1-1"))
