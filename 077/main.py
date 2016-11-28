@@ -21,9 +21,26 @@ class Solution(object):
         :type k: int
         :rtype: List[List[int]]
         """
-        if k > n:
-            return []
-        elif k
+        if k == 0:
+            return [[]]
+        else:
+            res = []
+            for i in range(1, n + 1):
+                for item in self.combine(i - 1, k - 1):
+                    res.append(item + [i])
+            return res
+        # faster solution somehow
+        # if k == 0:
+        #     return [[]]
+        # return [pre + [i] for i in range(1, n+1) for pre in self.combine(i-1, k-1)]
+
 
 ans = Solution()
-print(ans.combine(4 2))
+print(ans.combine(4, 2))
+
+"""
+1 2 3
+1 2 4
+1 3 4
+2 3 4
+"""
