@@ -18,7 +18,13 @@ class Solution(object):
         :type prices: List[int]
         :rtype: int
         """
-        pass
+        l = len(prices)
+        if l == 0:
+            return 0
+
+        dp_buy = [0 for _ in range(l)]
+        dp_sell = [0 for _ in range(l)]
+
 
 ans = Solution()
 print(ans.maxProfit([1, 2, 3, 0, 2]))
