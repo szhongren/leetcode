@@ -10,11 +10,25 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        if x <= 1:
-            return x
+        root = 0
+        while root * root <= x:
+            root += 1
+        return root - 1
+
+    def mySqrtRecur(self, x, lo, hi):
+        if lo * lo == x:
+            return lo
+        elif hi * hi == x:
+            return hi
         else:
-            start = 0:
+            if
+        # else:
+        #     root = 1
+        #     while abs(root * root - x) > 0.000001:
+        #         root = (root + x/root)/2
+        #     return root
 
 ans = Solution()
-for i in range(10):
-    print(ans.mySqrt(i))
+
+for i in range(20):
+    print(i, ans.mySqrt(i))
