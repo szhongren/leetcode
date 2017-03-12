@@ -15,9 +15,7 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        self.l = len(nums)
-
-        return self.partition(nums, self.l - k, 0, self.l)
+        return 1
 
     def partition(self, nums, target, start, end):
         """
@@ -26,12 +24,7 @@ class Solution(object):
         :type start: int
         :type end: int
         """
-        if start == target:
-            return nums[start]
-        elif target + 1 == end:
-            return nums[end - 1]
-        pivot = nums[end - 1]
-        pass
+        return 1
 
 ans = Solution()
 print(ans.findKthLargest([3, 2, 1, 5, 6, 4], 2))

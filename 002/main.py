@@ -1,12 +1,21 @@
 """
 You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 """
-
 # Definition for singly-linked list.
 class ListNode(object):
     def __init__(self, x):
         self.val = x
         self.next = None
+
+def make_list(a):
+    out = []
+    while a > 0:
+        digit = a % 10
+        a = a // 10
+        out.append(ListNode(digit))
+    for i in range(len(out) - 1):
+        out[i].next = out[i + 1]
+    return out[0]
 
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
@@ -39,16 +48,5 @@ def add_carry(l1, l2, c):
         ans.next = add_carry(l1.next, l2.next, digit // 10)
         return ans
 
-
-def makeNumber(a):
-    out = []
-    while a > 0:
-        digit = a % 10
-        a = a // 10
-        out.append(ListNode(digit))
-    for i in range(len(out) - 1):
-        out[i].next = out[i + 1]
-    return out[0]
-
 ans = Solution()
-print(ans.addTwoNumbers(makeNumber(342), makeNumber(465)))
+print(ans.addTwoNumbers(make_list(342), make_list(465)))

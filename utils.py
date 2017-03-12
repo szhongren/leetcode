@@ -4,6 +4,16 @@ class ListNode(object):
         self.val = x
         self.next = None
 
+def make_list(a):
+    out = []
+    while a > 0:
+        digit = a % 10
+        a = a // 10
+        out.append(ListNode(digit))
+    for i in range(len(out) - 1):
+        out[i].next = out[i + 1]
+    return out[0]
+
 # Definition for a binary tree node.
 class TreeNode(object):
     def __init__(self, x):
@@ -27,14 +37,3 @@ def make_tree(ls):
             if i * 2 + 2 < length:
                 list_nodes[i].right = list_nodes[i * 2 + 2]
     return list_nodes[0]
-
-def make_list(a):
-    out = []
-    while a > 0:
-        digit = a % 10
-        a = a // 10
-        out.append(ListNode(digit))
-    for i in range(len(out) - 1):
-        out[i].next = out[i + 1]
-    return out[0]
-

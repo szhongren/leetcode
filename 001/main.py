@@ -6,7 +6,6 @@ You may assume that each input would have exactly one solution.
 
 
 class Solution(object):
-
     def twoSum(self, nums, target):
         found = {}
         res = []
