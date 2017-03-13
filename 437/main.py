@@ -49,13 +49,34 @@ def make_tree(ls):
     return list_nodes[0]
 
 class Solution(object):
-    def pathSum(self, root, sum):
+    def pathSum(self, root, k):
         """
         :type root: TreeNode
         :type sum: int
         :rtype: int
         """
-        pass
+        sum_root = self.sumFromRoot(root, 0)
+        self.count = 0
+        self.countSums(sum_root, [0], k) # small thing  to remember, edge case where the entire path to leaf sums to k
+        return self.count
+
+    def sumFromRoot(self, root, acc):
+        if root == None:
+            return None
+        new_root = TreeNode(acc + root.val)
+        new_root.left = self.sumFromRoot(root.left, acc + root.val)
+        new_root.right = self.sumFromRoot(root.right, acc + root.val)
+        return new_root
+
+    def countSums(self, root, prev, k):
+        if root == None:
+            return
+        curr_val = root.val
+        for v in prev:
+            if curr_val - v == k:
+                self.count += 1
+        self.countSums(root.left, prev + [curr_val], k)
+        self.countSums(root.right, prev + [curr_val], k)
 
 ans = Solution()
 print(ans.pathSum(make_tree([10, 5, -3, 3, 2, None, 11, 3, -2, None, 1]), 8))

@@ -4,7 +4,7 @@ class ListNode(object):
         self.val = x
         self.next = None
 
-def make_list(a):
+def make_list_from_num(a):
     out = []
     while a > 0:
         digit = a % 10
@@ -13,6 +13,16 @@ def make_list(a):
     for i in range(len(out) - 1):
         out[i].next = out[i + 1]
     return out[0]
+
+def make_list(ls):
+    if len(ls) == 0:
+        return None
+    list_nodes = list(map(lambda x: ListNode(x), ls))
+    for i, v in enumerate(list_nodes):
+        if i == 0:
+            continue
+        list_nodes[i - 1].next = v
+    return list_nodes[0]
 
 # Definition for a binary tree node.
 class TreeNode(object):
