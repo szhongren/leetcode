@@ -1,52 +1,10 @@
-# Definition for singly-linked list.
-class ListNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+"""
+Implement a trie with insert, search, and startsWith methods.
 
-def make_list_from_num(a):
-    out = []
-    while a > 0:
-        digit = a % 10
-        a = a // 10
-        out.append(ListNode(digit))
-    for i in range(len(out) - 1):
-        out[i].next = out[i + 1]
-    return out[0]
+Note:
+You may assume that all inputs are consist of lowercase letters a-z.
+"""
 
-def make_list(ls):
-    if len(ls) == 0:
-        return None
-    list_nodes = list(map(lambda x: ListNode(x), ls))
-    for i, v in enumerate(list_nodes[1:]):
-        list_nodes[i].next = v
-    return list_nodes[0]
-
-# Definition for a binary tree node.
-class TreeNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
-
-def make_tree(ls):
-    """
-    :type ls: List[int]
-    :rtype: TreeNode
-    """
-    if len(ls) == 0:
-        return None
-    list_nodes = list(map(lambda x: TreeNode(x) if x != None else None, ls))
-    length = len(list_nodes)
-    for i in range(length // 2):
-        if list_nodes[i] != None:
-            if i * 2 + 1 < length:
-                list_nodes[i].left = list_nodes[i * 2 + 1]
-            if i * 2 + 2 < length:
-                list_nodes[i].right = list_nodes[i * 2 + 2]
-    return list_nodes[0]
-
-# Tries
 class TrieNode(object):
     def __init__(self, if_terminal = False):
         """
@@ -56,11 +14,13 @@ class TrieNode(object):
         self.terminal = if_terminal
 
 class Trie(object):
+
     def __init__(self):
         """
         Initialize your data structure here.
         """
         self.root = TrieNode()
+
 
     def insert(self, word):
         """
@@ -88,6 +48,7 @@ class Trie(object):
             curr = curr.children[ch]
         return curr.terminal
 
+
     def startsWith(self, prefix):
         """
         Returns if there is any word in the trie that starts with the given prefix.
@@ -100,3 +61,23 @@ class Trie(object):
                 return False
             curr = curr.children[ch]
         return True
+
+
+
+
+# Your Trie object will be instantiated and called as such:
+# obj = Trie()
+# obj.insert(word)
+# param_2 = obj.search(word)
+# param_3 = obj.startsWith(prefix)
+
+test = Trie()
+test.insert("hello")
+test.insert("help")
+test.insert("you")
+test.insert("hell")
+print(test.search("hel"))
+print(test.search("help"))
+print(test.search("yo"))
+print(test.search("hell"))
+
