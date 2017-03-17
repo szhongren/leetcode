@@ -18,10 +18,8 @@ def make_list(ls):
     if len(ls) == 0:
         return None
     list_nodes = list(map(lambda x: ListNode(x), ls))
-    for i, v in enumerate(list_nodes):
-        if i == 0:
-            continue
-        list_nodes[i - 1].next = v
+    for i, v in enumerate(list_nodes[1:]):
+        list_nodes[i].next = v
     return list_nodes[0]
 
 # Definition for a binary tree node.

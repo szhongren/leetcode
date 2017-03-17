@@ -16,27 +16,25 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        if len(nums) <= 1:
-            return len(nums)
-        else:
-            back_p = 0
-            front_p = 1
-            found = False
-            while front_p < len(nums):
-                if nums[front_p] == nums[back_p]:
-                    if found:
-                        back_p += 1
-                    else:
-                        found = True
-                    front_p += 1
-                else:
-                    back_p += 1
-                    nums[back_p] = nums[front_p]
-                    front_p += 1
-                    found = False
-        return back_p + 1
+        count = 0
+        for curr in nums:
+            if count < 2 or curr > nums[count - 2]:
+                nums[count] = curr
+                count += 1
+        return count
 
+    #     return self.removeDuplicatesRecur(nums)
 
+    # def removeDuplicatesRecur(self, nums):
+    #     if len(nums) == 0:
+    #         return 0
+    #     if nums[0] == nums[-1]:
+    #         return min(len(nums), 2)
+    #     ptr = 1
+    #     while nums[ptr] == nums[0]:
+    #         ptr += 1
+    #     pos = min(2, ptr)
+    #     return min(2, ptr) + self.removeDuplicatesRecur(nums[ptr:])
 
 ans = Solution()
 for _ in range(10):
