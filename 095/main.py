@@ -12,7 +12,10 @@ Given n = 3, your program should return all 5 unique BST's shown below.
 """
 
 # Definition for a binary tree node.
+
+
 class TreeNode(object):
+
     def __init__(self, x):
         self.val = x
         self.left = None
@@ -27,6 +30,7 @@ class TreeNode(object):
         if self.right != None:
             ret += self.right.__str__(level + 1)
         return ret
+
 
 def make_tree(ls):
     """
@@ -43,7 +47,9 @@ def make_tree(ls):
                 list_nodes[i].right = list_nodes[i * 2 + 2]
     return list_nodes[0]
 
+
 class Solution(object):
+
     def generateTrees(self, n):
         """
         :type n: int

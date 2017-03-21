@@ -18,24 +18,24 @@ class Solution(object):
         if len(nums) <= 1:
             return len(nums)
         else:
-            back_p = 0
-            front_p = 1
-            while front_p < len(nums):
+            slow = 0
+            fast = 1
+            while fast < len(nums):
                 """
-                if front_p >= len(nums) or nums[back_p] != nums[front_p]:
-                    nums = nums[:back_p + 1] + nums[front_p:]
-                    back_p += 1
-                    front_p = back_p + 1
+                if fast >= len(nums) or nums[slow] != nums[fast]:
+                    nums = nums[:slow + 1] + nums[fast:]
+                    slow += 1
+                    fast = slow + 1
                 else:
-                    front_p += 1
+                    fast += 1
                 """
-                if nums[front_p] == nums[back_p]:
-                    front_p += 1
+                if nums[fast] == nums[slow]:
+                    fast += 1
                 else:
-                    back_p += 1
-                    nums[back_p] = nums[front_p]
-                    front_p += 1
-        return back_p + 1
+                    slow += 1
+                    nums[slow] = nums[fast]
+                    fast += 1
+        return slow + 1
 
 ans = Solution()
 print(ans.removeDuplicates([1, 2, 2]))

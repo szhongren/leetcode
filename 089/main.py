@@ -32,5 +32,5 @@ class Solution(object):
             return front + list(map(lambda x: x + (1 << (n - 1)), rev))
 
 ans = Solution()
-for i in range(4):
+for i in range(6):
     print(ans.grayCode(i))
