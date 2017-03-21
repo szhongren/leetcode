@@ -19,9 +19,27 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         res = [[0 for _ in range(n)] for _ in range(n)]
-        for layer in range(n // 2):
-            for i in range(n - 2 * layer - 1):
-                res[layer][layer + i] = 1
+        curr = 1
+        half = (n + 1) // 2
+        for layer in range(half):
+            for x in range(layer, layer + 1):
+                for y in range(layer, n - layer - 1):
+                    res[x][y] = curr
+                    curr += 1
+            for x in range(layer, n - layer - 1):
+                for y in range(n - layer - 1, n - layer):
+                    res[x][y] = curr
+                    curr += 1
+            for x in range(n - layer - 1, n - layer):
+                for y in range(n - layer - 1, layer, -1):
+                    res[x][y] = curr
+                    curr += 1
+            for x in range(n - layer - 1, layer, -1):
+                for y in range(layer, layer + 1):
+                    res[x][y] = curr
+                    curr += 1
+        if n % 2:
+            res[half - 1][half - 1] = curr
         return res
 
 """
