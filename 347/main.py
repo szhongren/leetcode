@@ -14,13 +14,15 @@ class Heap(object):
     def __init__(self, vals=[]):
         self.values = vals
         self.len = len(vals)
+        if self.len > 0:
+            self.heapify(self.parent(self.len - 1))
 
     def __str__(self):
         printed = 0
         power = 1
         res = ""
         while printed < self.len:
-            res += str(self.values[printed: printed + power]) + '\n'
+            res += str(self.values[printed: min(printed + power, self.len)]) + '\n'
             printed += power
             power <<= 1
         return res
@@ -46,13 +48,16 @@ class Heap(object):
     def siftdown(self, i):
         curr_i = i
         while self.leftChild(curr_i):
-            child = self.leftChild(curr_i)
             swap_i = curr_i
 
-            if self.values[swap_i] < self.values[child]:
-                swap_i = child
-            if self.rightChild(curr_i) and self.values[swap_i] < self.values[self.rightChild(curr_i)]:
-                swap_i = self.rightChild(curr_i)
+            l_child_i = self.leftChild(curr_i)
+            if self.values[swap_i] < self.values[l_child_i]:
+                swap_i = l_child_i
+
+            r_child_i = self.rightChild(curr_i)
+            if r_child_i and self.values[swap_i] < self.values[r_child_i]:
+                swap_i = r_child_i
+
             if swap_i == curr_i:
                 return
             else:
@@ -62,7 +67,14 @@ class Heap(object):
     def heapify(self, start):
         for i in range(start, -1, -1):
             self.siftdown(i)
-        return
+
+    def pop(self):
+        if self.len == 0:
+            return None
+        self.values[0], self.values[self.len - 1] = self.values[self.len - 1], self.values[0]
+        self.len -= 1
+        self.heapify(self.parent(self.len - 1))
+        return self.values[self.len]
 
 class Solution(object):
     def topKFrequent(self, nums, k):
@@ -77,10 +89,9 @@ class Solution(object):
                 counts[val] = 1
             else:
                 counts[val] += 1
-        h = Heap(nums)
-        print(nums, len(nums))
-        h.heapify(h.parent(h.len - 1))
-        return h
+        count_to_val = [(counts[val], val) for val in counts]
+        h = Heap(count_to_val)
+        return [h.pop()[1] for _ in range(k)]
 
         # most_freq = []
         # counts = {}
@@ -115,6 +126,8 @@ class Solution(object):
 ans = Solution()
 for _ in range(15):
     values = [randint(-10, 10) for _ in range(randint(1, 30))]
-    print(ans.topKFrequent(values, 2))
+    print(values)
+    print(ans.topKFrequent(values, randint(1, len(set(values)))))
+    print()
 print(ans.topKFrequent([4,1,-1,2,-1,2,3], 2))
 print(ans.topKFrequent([1,1,1,2,2,3], 2))
