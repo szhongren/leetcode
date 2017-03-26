@@ -20,19 +20,37 @@ class Solution(object):
         :type target: int
         :rtype: List[List[int]]
         """
-
-def recur_sum(nums, target, count):
-    """
-    :type nums: List[int]
-    :type target: int
-    :type count: int
-    :rtype: List[List[int]]
-    """
-    for i in range(count, 0, -1):
-        print(i)
-
+        counts = {}
+        for v in nums:
+            if v in counts:
+                counts[v] += 1
+            else:
+                counts[v] = 1
+        ans = []
+        seen = {0}
+        for v in counts.keys():
+            counts[v] -= 1
+            for w in counts.keys():
+                if counts[w] == 0:
+                    continue
+                counts[w] -= 1
+                for x in counts.keys():
+                    if counts[x] == 0:
+                        continue
+                    counts[x] -= 1
+                    curr = target - v - w - x
+                    if curr not in counts:
+                        counts[x] += 1
+                        continue
+                    quadlet = sorted([v, w, x, curr])
+                    sig = tuple(quadlet)
+                    if counts[curr] > 0 and sig not in seen:
+                        ans.append(quadlet)
+                        seen.add(sig)
+                    counts[x] += 1
+                counts[w] += 1
+            counts[v] += 1
+        return ans
 
 ans = Solution()
-ans.fourSum([1, 0, -1, 0, -2, 2], 0)
-res = recur_sum([1, 0, -1, 0, -2, 2], 0, 1)
-pass
+print(ans.fourSum([1, 0, -1, 0, -2, 2], 0))

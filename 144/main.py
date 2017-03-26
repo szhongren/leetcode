@@ -10,30 +10,6 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
-class Solution(object):
-    def preorderTraversal(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
-        stack = []
-        stack.append(root)
-        none_found = 0
-        result = []
-        while len(stack) != 0:
-            curr = stack[0]
-            stack = stack[1:]
-            if curr == None:
-                none_found += 1
-            elif none_found == 2:
-                result.append(curr.val)
-                none_found = 0
-            else:
-                stack.append(curr.right)
-                stack.append(curr.left)
-                stack.append(curr)
-        return result
-
 def make_tree(ls):
     """
     :type ls: List[int]
@@ -48,6 +24,26 @@ def make_tree(ls):
             if i * 2 + 2 < length:
                 list_nodes[i].right = list_nodes[i * 2 + 2]
     return list_nodes[0]
+
+class Solution(object):
+    def preorderTraversal(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        if not root:
+            return []
+        stack = []
+        stack.append(root)
+        result = []
+        while stack:
+            curr = stack.pop()
+            result.append(curr.val)
+            if curr.right:
+                stack.append(curr.right)
+            if curr.left:
+                stack.append(curr.left)
+        return result
 
 ans = Solution()
 tree = make_tree([6, 2, 8, 0, 4, 7, 9, None, None, 3, 5])

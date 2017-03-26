@@ -4,6 +4,9 @@ class ListNode(object):
         self.val = x
         self.next = None
 
+    def __str__(self):
+        return str(self.val) + " => " + str(self.next)
+
 def make_list_from_num(a):
     out = []
     while a > 0:
@@ -21,6 +24,17 @@ def make_list(ls):
     for i, v in enumerate(list_nodes[1:]):
         list_nodes[i].next = v
     return list_nodes[0]
+
+def getLength(ls, acc=0):
+    """
+    tail recursive length func
+    :type ls: ListNode
+    :type acc: int
+    :rtype: int
+    """
+    if ls == None:
+        return acc
+    return getLength(ls.next, acc + 1)
 
 # Definition for a binary tree node.
 class TreeNode(object):
