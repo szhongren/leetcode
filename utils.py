@@ -114,3 +114,12 @@ class Trie(object):
                 return False
             curr = curr.children[ch]
         return True
+
+# red-black tree
+class RBTreeNode(object):
+    def __init__(self, val):
+        self.val = val
+        self.red = False
+        self.parent = None
+        self.left = None
+        self.right = None
