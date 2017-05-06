@@ -116,10 +116,16 @@ class Trie(object):
         return True
 
 # red-black tree
+class RBTree(object):
+    def __init__(self, val=None):
+        if val:
+            self.root = RBTreeNode(val, False, None)
+        self.root = None
+
 class RBTreeNode(object):
-    def __init__(self, val):
+    def __init__(self, val, ifRed, parent):
         self.val = val
-        self.red = False
-        self.parent = None
+        self.red = ifRed
+        self.parent = parent
         self.left = None
         self.right = None
