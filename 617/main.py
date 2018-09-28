@@ -30,7 +30,7 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
-    def __str__(self, level = 0):
+    def __str__(self, level=0):
         ret = repr(self.val) + '\n'
         if level != 0:
             ret = "-" * (level - 1) + '>' + ret
