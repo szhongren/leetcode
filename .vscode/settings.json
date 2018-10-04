@@ -1,5 +1,6 @@
 // Place your settings in this file to overwrite default and user settings.
 {
 "editor.tabSize": 4,
-"python.formatting.provider": "autopep8"
+"python.formatting.provider": "autopep8",
+"python.pythonPath": "C:\\Users\\shaoz\\AppData\\Local\\Programs\\Python\\Python36\\python.exe"
 }

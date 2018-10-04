@@ -2,24 +2,18 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Python: Terminal (integrated)",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    },
+    {
       "name": "Launch file",
       "type": "go",
       "request": "launch",
       "mode": "debug",
       "program": "${file}"
     },
-    {
-      "name": "Python",
-      "type": "python",
-      "request": "launch",
-      "stopOnEntry": false,
-      "pythonPath": "${config.python.pythonPath}",
-      "program": "${file}",
-      "debugOptions": [
-        "WaitOnAbnormalExit",
-        "WaitOnNormalExit",
-        "RedirectOutput"
-      ]
-    }
   ]
 }
