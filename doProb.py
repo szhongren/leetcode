@@ -4,8 +4,7 @@ import os
 initKey = {
     'p': {
         'extension': 'py',
-        'skeleton': """
-class Solution(object):
+        'skeleton': """class Solution(object):
     def stub(self):
         pass
 
@@ -15,8 +14,7 @@ print(ans.stub())
     },
     'g': {
         'extension': 'go',
-        'skeleton': """
-package main
+        'skeleton': """package main
 
 import "fmt"
 
