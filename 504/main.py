@@ -14,6 +14,7 @@ Output: "-10"
 Note: The input will be in range of [-1e7, 1e7].
 """
 
+
 class Solution(object):
     def convertToBase7(self, num):
         """
@@ -24,11 +25,12 @@ class Solution(object):
             return "0"
         res = ""
         if num < 0:
-            return '-' + self.convertToBase7(-num)
+            return "-" + self.convertToBase7(-num)
         while num > 0:
             res = str(num % 7) + res
             num //= 7
         return res
+
 
 ans = Solution()
 print(ans.convertToBase7(100))

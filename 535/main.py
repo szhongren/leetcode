@@ -5,8 +5,8 @@ Design the encode and decode methods for the TinyURL service. There is no restri
 """
 import base64
 
-class Codec:
 
+class Codec:
     def encode(self, longUrl):
         """Encodes a URL to a shortened URL.
 
@@ -14,7 +14,6 @@ class Codec:
         :rtype: str
         """
         return base64.b64encode(longUrl)
-
 
     def decode(self, shortUrl):
         """Decodes a shortened URL to its original URL.

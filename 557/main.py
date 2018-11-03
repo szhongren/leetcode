@@ -9,6 +9,7 @@ Output: "s'teL ekat edoCteeL tsetnoc"
 Note: In the string, each word is separated by single space and there will not be any extra space in the string.
 """
 
+
 class Solution(object):
     def reverseWords(self, s):
         """
@@ -16,8 +17,9 @@ class Solution(object):
         :rtype: str
         """
         words = s.split()
-        rev = map(lambda x: ''.join(reversed(x)), words)
-        return ' '.join(rev)
+        rev = map(lambda x: "".join(reversed(x)), words)
+        return " ".join(rev)
+
 
 ans = Solution()
 print(ans.reverseWords("Let's take LeetCode contest"))

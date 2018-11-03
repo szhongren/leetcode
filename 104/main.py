@@ -11,6 +11,7 @@ The maximum depth is the number of nodes along the longest path from the root no
 #         self.left = None
 #         self.right = None
 
+
 class Solution(object):
     def maxDepth(self, root):
         """
@@ -20,4 +21,4 @@ class Solution(object):
         if root == None:
             return 0
         else:
-            return 1+ max(self.maxDepth(root.left), self.maxDepth(root.right))
+            return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
