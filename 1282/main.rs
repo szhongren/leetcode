@@ -1,4 +1,5 @@
 use std::collections::HashMap;
+use std::cell::RefCell;
 
 fn main() {
     println!("{:?}", Solution::group_the_people(vec![3, 3, 3, 3, 3, 1, 3]));
@@ -7,8 +8,8 @@ fn main() {
 
 #[derive(Debug)]
 struct GroupStruct {
-    filled_groups: Vec<Vec<i32>>,
-    filling_group: Vec<i32>
+    filled_groups: Vec<RefCell<Vec<i32>>>,
+    filling_group: RefCell<Vec<i32>>
 }
 
 struct Solution;
@@ -21,25 +22,25 @@ impl Solution {
                 None => {
                     groups_map.insert(group_size, GroupStruct {
                         filled_groups: vec![],
-                        filling_group: vec![i as i32]
+                        filling_group: RefCell::from(vec![i as i32])
                     });
                 },
                 Some(group_struct) => {
-                    if group_struct.filling_group.len() as i32 == *group_size {
+                    if group_struct.filling_group.borrow().len() as i32 == *group_size {
                         group_struct.filled_groups.push(group_struct.filling_group.clone());
-                        group_struct.filling_group = vec![];
+                        group_struct.filling_group = RefCell::from(vec![]);
                     }
-                    group_struct.filling_group.push(i as i32);
+                    group_struct.filling_group.borrow_mut().push(i as i32);
                 },
             }
         }
         let mut result = vec![];
         for group_struct in groups_map.values() {
             for filled_group in group_struct.filled_groups.clone() {
-                result.push(filled_group);
+                result.push(filled_group.clone());
             }
             result.push(group_struct.filling_group.clone());
         }
-        result
+        result.into_iter().map(|refcell| refcell.into_inner()).collect()
     }
 }
