@@ -1,32 +1,65 @@
 fn main() {
     println!("{:?}", Solution::get_decimal_value(Option::None));
-    println!("{:?}", Solution::get_decimal_value(ListNode::from_vec(vec![0, 0])));
-    println!("{:?}", Solution::get_decimal_value(ListNode::from_vec(vec![0, 1])));
-    println!("{:?}", Solution::get_decimal_value(ListNode::from_vec(vec![1, 0])));
-    println!("{:?}", Solution::get_decimal_value(ListNode::from_vec(vec![1, 1])));
-    println!("{:?}", Solution::get_decimal_value(ListNode::from_vec(vec![0, 0, 0])));
-    println!("{:?}", Solution::get_decimal_value(ListNode::from_vec(vec![0, 0, 1])));
-    println!("{:?}", Solution::get_decimal_value(ListNode::from_vec(vec![0, 1, 0])));
-    println!("{:?}", Solution::get_decimal_value(ListNode::from_vec(vec![0, 1, 1])));
-    println!("{:?}", Solution::get_decimal_value(ListNode::from_vec(vec![1, 0, 0])));
-    println!("{:?}", Solution::get_decimal_value(ListNode::from_vec(vec![1, 0, 1])));
-    println!("{:?}", Solution::get_decimal_value(ListNode::from_vec(vec![1, 1, 0])));
-    println!("{:?}", Solution::get_decimal_value(ListNode::from_vec(vec![1, 1, 1])));
+    println!(
+        "{:?}",
+        Solution::get_decimal_value(ListNode::from_vec(vec![0, 0]))
+    );
+    println!(
+        "{:?}",
+        Solution::get_decimal_value(ListNode::from_vec(vec![0, 1]))
+    );
+    println!(
+        "{:?}",
+        Solution::get_decimal_value(ListNode::from_vec(vec![1, 0]))
+    );
+    println!(
+        "{:?}",
+        Solution::get_decimal_value(ListNode::from_vec(vec![1, 1]))
+    );
+    println!(
+        "{:?}",
+        Solution::get_decimal_value(ListNode::from_vec(vec![0, 0, 0]))
+    );
+    println!(
+        "{:?}",
+        Solution::get_decimal_value(ListNode::from_vec(vec![0, 0, 1]))
+    );
+    println!(
+        "{:?}",
+        Solution::get_decimal_value(ListNode::from_vec(vec![0, 1, 0]))
+    );
+    println!(
+        "{:?}",
+        Solution::get_decimal_value(ListNode::from_vec(vec![0, 1, 1]))
+    );
+    println!(
+        "{:?}",
+        Solution::get_decimal_value(ListNode::from_vec(vec![1, 0, 0]))
+    );
+    println!(
+        "{:?}",
+        Solution::get_decimal_value(ListNode::from_vec(vec![1, 0, 1]))
+    );
+    println!(
+        "{:?}",
+        Solution::get_decimal_value(ListNode::from_vec(vec![1, 1, 0]))
+    );
+    println!(
+        "{:?}",
+        Solution::get_decimal_value(ListNode::from_vec(vec![1, 1, 1]))
+    );
 }
 
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
     pub val: i32,
-    pub next: Option<Box<ListNode>>
+    pub next: Option<Box<ListNode>>,
 }
 
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
-        ListNode {
-            next: None,
-            val
-        }
+        ListNode { next: None, val }
     }
 
     fn from_vec(vec: Vec<i32>) -> Option<Box<Self>> {
@@ -34,7 +67,7 @@ impl ListNode {
         for value in vec.into_iter().rev() {
             current_node = Option::from(Box::new(ListNode {
                 next: current_node,
-                val: value
+                val: value,
             }));
         }
         current_node
