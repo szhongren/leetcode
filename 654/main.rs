@@ -1,6 +1,6 @@
 use std::cell::RefCell;
-use std::rc::Rc;
 use std::cmp::Ordering;
+use std::rc::Rc;
 
 fn main() {
     println!("{:#?}", Solution::construct_maximum_binary_tree(vec![]));
