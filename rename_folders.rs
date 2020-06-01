@@ -12,13 +12,13 @@ fn main() -> std::io::Result<()> {
         .map(|ok| ok.unwrap())
         .collect::<Vec<_>>();
     for folder in dir_folders {
-        let folder_string: String = folder.0.to_str().unwrap().to_string();
-        rename(folder_string.clone(), remove_padding(folder_string.clone()));
+        let folder_string: &str = folder.0.to_str().unwrap();
+        rename(folder_string, remove_padding(folder_string));
         println!("{}", remove_padding(folder_string));
     }
     Ok(())
 }
 
-fn remove_padding(folder: String) -> String {
-    folder.trim_start_matches('0').to_string()
+fn remove_padding(folder: &str) -> &str { // pass ref to str immutably
+    folder.trim_start_matches('0')
 }
