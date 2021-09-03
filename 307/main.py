@@ -56,7 +56,7 @@ You may assume the number of calls to update and sumRange function is distribute
 #             self.seen[(i, j)] = self.sums[j] - self.sums[i - 1]
 #         return self.seen[(i, j)]
 
-#Segment tree node
+# Segment tree node
 class Node(object):
     def __init__(self, start, end):
         self.start = start
@@ -72,14 +72,14 @@ class NumArray(object):
         initialize your data structure here.
         :type nums: List[int]
         """
-        #helper function to create the tree from input array
+        # helper function to create the tree from input array
         def createTree(nums, l, r):
 
-            #base case
+            # base case
             if l > r:
                 return None
 
-            #leaf node
+            # leaf node
             if l == r:
                 n = Node(l, r)
                 n.total = nums[l]
@@ -89,17 +89,17 @@ class NumArray(object):
 
             root = Node(l, r)
 
-            #recursively build the Segment tree
+            # recursively build the Segment tree
             root.left = createTree(nums, l, mid)
-            root.right = createTree(nums, mid+1, r)
+            root.right = createTree(nums, mid + 1, r)
 
-            #Total stores the sum of all leaves under root
-            #i.e. those elements lying between (start, end)
+            # Total stores the sum of all leaves under root
+            # i.e. those elements lying between (start, end)
             root.total = root.left.total + root.right.total
 
             return root
 
-        self.root = createTree(nums, 0, len(nums)-1)
+        self.root = createTree(nums, 0, len(nums) - 1)
 
     def update(self, i, val):
         """
@@ -107,26 +107,26 @@ class NumArray(object):
         :type val: int
         :rtype: int
         """
-        #Helper function to update a value
+        # Helper function to update a value
         def updateVal(root, i, val):
 
-            #Base case. The actual value will be updated in a leaf.
-            #The total is then propogated upwards
+            # Base case. The actual value will be updated in a leaf.
+            # The total is then propogated upwards
             if root.start == root.end:
                 root.total = val
                 return val
 
             mid = (root.start + root.end) // 2
 
-            #If the index is less than the mid, that leaf must be in the left subtree
+            # If the index is less than the mid, that leaf must be in the left subtree
             if i <= mid:
                 updateVal(root.left, i, val)
 
-            #Otherwise, the right subtree
+            # Otherwise, the right subtree
             else:
                 updateVal(root.right, i, val)
 
-            #Propogate the changes after recursive call returns
+            # Propogate the changes after recursive call returns
             root.total = root.left.total + root.right.total
 
             return root.total
@@ -140,31 +140,32 @@ class NumArray(object):
         :type j: int
         :rtype: int
         """
-        #Helper function to calculate range sum
+        # Helper function to calculate range sum
         def rangeSum(root, i, j):
 
-            #If the range exactly matches the root, we already have the sum
+            # If the range exactly matches the root, we already have the sum
             if root.start == i and root.end == j:
                 return root.total
 
             mid = (root.start + root.end) // 2
 
-            #If end of the range is less than the mid, the entire interval lies
-            #in the left subtree
+            # If end of the range is less than the mid, the entire interval lies
+            # in the left subtree
             if j <= mid:
                 return rangeSum(root.left, i, j)
 
-            #If start of the interval is greater than mid, the entire inteval lies
-            #in the right subtree
+            # If start of the interval is greater than mid, the entire inteval lies
+            # in the right subtree
             elif i >= mid + 1:
                 return rangeSum(root.right, i, j)
 
-            #Otherwise, the interval is split. So we calculate the sum recursively,
-            #by splitting the interval
+            # Otherwise, the interval is split. So we calculate the sum recursively,
+            # by splitting the interval
             else:
-                return rangeSum(root.left, i, mid) + rangeSum(root.right, mid+1, j)
+                return rangeSum(root.left, i, mid) + rangeSum(root.right, mid + 1, j)
 
         return rangeSum(self.root, i, j)
+
 
 # Your NumArray object will be instantiated and called as such:
 # numArray = NumArray(nums)

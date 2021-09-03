@@ -20,6 +20,7 @@ If the first sequence of non-whitespace characters in str is not a valid integra
 If no valid conversion could be performed, a zero value is returned. If the correct value is out of the range of representable values, INT_MAX (2147483647) or INT_MIN (-2147483648) is returned.
 """
 
+
 class Solution(object):
     def myAtoi(self, str):
         """
@@ -28,14 +29,14 @@ class Solution(object):
         """
         pointer = 0
         isNegative = False
-        while pointer<len(str) and str[pointer]==' ':
+        while pointer < len(str) and str[pointer] == " ":
             pointer += 1
-        if pointer==len(str):
+        if pointer == len(str):
             return 0
-        if str[pointer] == '-':
+        if str[pointer] == "-":
             isNegative = True
             pointer += 1
-        elif str[pointer] == '+':
+        elif str[pointer] == "+":
             isNegative = False
             pointer += 1
         solution = 0
@@ -46,7 +47,7 @@ class Solution(object):
                 solution *= 10
                 solution += int(str[pointer])
 
-        #This is because leetcode question is not prepared to Python but to Java/C so we truncate it
+        # This is because leetcode question is not prepared to Python but to Java/C so we truncate it
         if not isNegative and solution > 2147483647:
             return 2147483647
         elif isNegative and solution > 2147483648:
