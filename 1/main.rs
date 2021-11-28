@@ -17,8 +17,8 @@ impl Solution {
                     result.push(index as i32);
                     result.push(i as i32);
                     break;
-                },
-                None => {},
+                }
+                None => {}
             }
             seen.insert(val, i);
         }

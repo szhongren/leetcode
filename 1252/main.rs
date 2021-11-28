@@ -1,6 +1,12 @@
 fn main() {
-    println!("{:#?}", Solution::odd_cells(2, 3, vec![vec![0, 1], vec![1, 1]]));
-    println!("{:#?}", Solution::odd_cells(2, 2, vec![vec![0, 0], vec![1, 1]]));
+    println!(
+        "{:#?}",
+        Solution::odd_cells(2, 3, vec![vec![0, 1], vec![1, 1]])
+    );
+    println!(
+        "{:#?}",
+        Solution::odd_cells(2, 2, vec![vec![0, 0], vec![1, 1]])
+    );
 }
 
 struct Solution;
@@ -16,8 +22,8 @@ impl Solution {
             let y = *(index.get(1).unwrap()) as usize;
             odd_rows[x] ^= true;
             odd_cols[y] ^= true;
-            count_rows += if odd_rows[x] {1} else {-1};
-            count_cols += if odd_cols[y] {1} else {-1};
+            count_rows += if odd_rows[x] { 1 } else { -1 };
+            count_cols += if odd_cols[y] { 1 } else { -1 };
         }
         (m - count_cols) * count_rows + (n - count_rows) * count_cols
     }

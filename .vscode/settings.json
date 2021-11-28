@@ -1,6 +1,146 @@
-// Place your settings in this file to overwrite default and user settings.
 {
-"editor.tabSize": 4,
-"python.formatting.provider": "black",
-"python.pythonPath": "C:\\Users\\shaoz\\AppData\\Local\\Programs\\Python\\Python36\\python.exe"
+    "editor.tabSize": 4,
+    "python.formatting.provider": "black",
+    "rust-analyzer.linkedProjects": [
+        {
+            "sysroot_src": "/home/shaoz/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library",
+            "crates": [
+                {
+                    "root_module": "./654/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1252/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./771/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./938/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1880/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1290/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1323/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./701/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1342/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1315/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1295/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1266/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1299/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1221/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1282/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1302/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1351/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1313/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1329/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1108/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./2/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./807/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./709/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1038/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./1281/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                },
+                {
+                    "root_module": "./3/main.rs",
+                    "edition": "2021",
+                    "deps": []
+                }
+            ]
+        }
+    ]
 }
