@@ -18,5 +18,6 @@ class Solution(object):
                 found[v] = i
         return res
 
+
 ans = Solution()
 print(ans.twoSum([2, 7, 11, 15], 9))
