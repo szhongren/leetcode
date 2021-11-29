@@ -1,3 +1,8 @@
+"""
+this is a small script that fixes autocomplete for rust files in the folders for each leetcode problem, working with rust-analyzer
+
+works by adding each file as a crate in the .vscode/settings.json file
+"""
 from json import load, dumps
 from os import scandir
 from os.path import isfile
