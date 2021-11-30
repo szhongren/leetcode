@@ -7,12 +7,10 @@ class Solution:
             seen = set()
             number_of_rows = len(matrix)
             number_of_cols = len(matrix[0])
-            for i in range(number_of_cols):
-                seen.add((-1, i))
-                seen.add((number_of_rows, i))
-            for i in range(number_of_rows):
-                seen.add((i, -1))
-                seen.add((i, number_of_cols))
+            seen.add((-1, 0))
+            seen.add((0, number_of_cols))
+            seen.add((number_of_rows, number_of_cols - 1))
+            seen.add((number_of_rows - 1, -1))
             return seen
 
         def is_end(current_element, seen):
@@ -32,6 +30,7 @@ class Solution:
 
             if is_end(current_element, seen):
                 return elements
+
             if (curr_x + dir_x, curr_y + dir_y) in seen:
                 new_dir_x, new_dir_y = {
                     (0, 1): (1, 0),
