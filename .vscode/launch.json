@@ -1,6 +1,7 @@
 {
   "version": "0.2.0",
-  "configurations": [{
+  "configurations": [
+    {
       "name": "Python: Terminal (integrated)",
       "type": "python",
       "request": "launch",
@@ -25,11 +26,13 @@
       "environment": [],
       "externalConsole": false,
       "MIMode": "gdb",
-      "setupCommands": [{
-        "description": "Enable pretty-printing for gdb",
-        "text": "-enable-pretty-printing",
-        "ignoreFailures": true
-      }],
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
       "preLaunchTask": "g++ build active file",
       "miDebuggerPath": "/usr/bin/gdb"
     },
