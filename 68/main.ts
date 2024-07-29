@@ -42,6 +42,7 @@ function getJustifiedLine(words: string[], maxWidth: number): string {
   }
   return result;
 }
+
 // pseudocode
 // get accumulator and index
 // for word in list at index
