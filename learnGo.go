@@ -39,7 +39,9 @@ func beyondHello() {
 	learnTypes()                            // < y minutes, learn more!
 }
 
-/* <- multiline comment
+/*
+	<- multiline comment
+
 Functions can have parameters and (multiple!) return values.
 Here `x`, `y` are the arguments and `sum`, `prod` is the signature (what's returned).
 Note that `x` and `sum` receive the type `int`.
@@ -390,3 +392,24 @@ func requestServer() {
 	body, err := ioutil.ReadAll(resp.Body)
 	fmt.Printf("\nWebserver said: `%s`", string(body))
 }
+
+// headway is a 3 way marketplace patient, provider, and insurance
+// patient -> consumer side of marketplace
+// pays a small copay and reduces costs by having insurance coverage
+// provider -> scheduling + billing + insurance enrollment
+// free for providers to use
+// insurance -> credential providers, so that insurance can increase size of network to increase network effects
+// pay claim to provider, service fee per claim
+// claims and billing
+// appointments & claims as growth 700,000 / month
+// 2 mil appointments in Q2
+// 570 employees
+// 120 on product side
+// 80 engs
+// pods, each has a charter
+// JS/React FE, python/fastAPI BE
+// interview process
+// 3 step process
+// 1. code signal, live coding interview, collaborative, working together with the eng
+// 2. impact and outcomes conversation
+// 3. virtual onsite, 1h systems design, 1h coding, 1h behavioral

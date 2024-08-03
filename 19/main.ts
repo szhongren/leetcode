@@ -9,6 +9,7 @@
  *     }
  * }
  */
+
 class ListNode {
   val: number;
   next: ListNode | null;
@@ -18,21 +19,19 @@ class ListNode {
   }
 }
 
-function reverseKGroup(head: ListNode | null, k: number): ListNode | null {
+function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
   if (head === null) return null;
-  let buffer: ListNode[] = [];
-  let currNode: ListNode | null = head;
-  for (let i = 0; i < k; i++) {
-    if (currNode === null) break;
-    buffer.push(currNode);
-    currNode = currNode?.next;
+  let prevPointer = new ListNode(-1, head);
+  let slowPointer = head;
+  let fastPointer = head;
+  for (let i = 0; i < n; i++) {
+    fastPointer = fastPointer.next;
   }
-  if (buffer.length != k) return head;
-  for (let i = buffer.length - 1; i > 0; i--) {
-    buffer[i].next = buffer[i - 1];
+  while (fastPointer !== null) {
+    prevPointer = prevPointer.next;
+    slowPointer = slowPointer.next;
+    fastPointer = fastPointer.next;
   }
-  buffer[0].next = reverseKGroup(currNode, k);
-  return buffer[buffer.length - 1];
+  prevPointer.next = slowPointer.next;
+  return prevPointer.val === -1 ? prevPointer.next : head;
 }
-
-// reverse first k, then recur on sublist 1 - first k
