@@ -1,22 +1,32 @@
-"""
-Implement strStr().
-
-Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
-"""
-
-class Solution(object):
-    def strStr(self, haystack, needle):
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
         """
-        :type haystack: str
-        :type needle: str
-        :rtype: int
+        2 ptrs
+        if match, continue
+        if b == len (needle) return a - b
+        else, continue and start from 0 for b
         """
-        l1 = len(needle)
-        l2 = len(haystack)
-        if l1 > l2:
-            return -1
-        else:
-            for i in range(l2 - l1 + 1):
-                if needle == haystack[i:i + l1]:
-                    return i
-            return -1
+        b = 0
+        for a in range(len(haystack)):
+            if b == len(needle):
+                return a - b
+            print(f"a: {a}, {haystack[a]} - {b}, {needle[b]}")
+            if needle[b] == haystack[a]:
+                b += 1
+            elif needle[0] == haystack[a]:
+                b = 1
+            else:
+                b = 0
+
+        if b == len(needle):
+            return a - b
+        return -1
+
+    def create_kmp_array(self, needle: str):
+        pass
+
+
+sol = Solution()
+print(sol.strStr("leetcode", "leeto"))
+print(sol.strStr("sadbutsad", "but"))
+print(sol.strStr("mississippi", "issip"))
