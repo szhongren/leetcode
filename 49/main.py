@@ -1,34 +1,17 @@
-"""
-Given an array of strings, group anagrams together.
+from typing import List
 
-For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"],
-Return:
 
-[
-  ["ate", "eat","tea"],
-  ["nat","tan"],
-  ["bat"]
-]
-Note: All inputs will be in lower-case.
-"""
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        groups = {}
+        for word in strs:
+            key = "".join(sorted(word))
+            print(key)
+            if key not in groups:
+                groups[key] = []
+            groups[key].append(word)
+        return [value for value in groups.values()]
 
-class Solution(object):
-    def groupAnagrams(self, strs):
-        """
-        :type strs: List[str]
-        :rtype: List[List[str]]
-        """
-        signatures = {}
-        for s in strs:
-            sig = ''.join(sorted(s))
-            if sig in signatures:
-                signatures[sig].append(s)
-            else:
-                signatures[sig] = [s]
-        res = []
-        for ls in signatures.values():
-            res.append(ls)
-        return res
 
-ans = Solution()
-print(ans.groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
+sol = Solution()
+sol.groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"])
