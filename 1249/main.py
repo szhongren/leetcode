@@ -1,13 +1,16 @@
-class Solution(object):
-    def minRemoveToMakeValid(self, s):
+class Solution:
+    def minRemoveToMakeValid(self, s: str) -> str:
         """
-        :type s: str
-        :rtype: str
-        string is valid if and only if
-        * empty string, or only lowercase chars
-        * can be written as AB where A and B are valid strings
-        * can be written as (A) where A is a valid string
-
         approach:
-        * go through the 
+        go char by char, append to result
+        if not (), just append
+        if (, continue and wait for matching )
         """
+
+        def minRemoveToMakeValid(s: str, opened: bool):
+            if s == "":
+                return ""
+            if s[0] not in ["(", ")"]:
+                return s + minRemoveToMakeValid(s[1:])
+
+        return minRemoveToMakeValid(s, False)

@@ -1,21 +1,5 @@
-from typing import Dict, List, Set
-from collections import deque
-
-
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.edges = []
-
-
-class Edge:
-    def __init__(self, operation, value, target):
-        self.operation = operation
-        self.value = value
-        self.target = target
-
-    def __repr__(self):
-        return f"<{self.operation}, {self.value}, {self.target}>"
+from typing import List
+from pprint import pprint
 
 
 class Solution:
@@ -23,47 +7,73 @@ class Solution:
         self, equations: List[List[str]], values: List[float], queries: List[List[str]]
     ) -> List[float]:
         """
-        approach:
-        build graph, and then bfs
+        approach
+        create union find sets, and compress paths
         """
-        nodes: Dict[str, Node] = {}
+        """
+        a / b == v
+        a = b * v
+        """
+        paths = {}
         for equation, value in zip(equations, values):
             a, b = equation[0], equation[1]
-            node_a = Node(a)
-            node_b = Node(b)
-            if a in nodes:
-                node_a = nodes[a]
-            if b in nodes:
-                node_b = nodes[b]
-            node_a.edges.append(Edge("/", value, b))
-            node_b.edges.append(Edge("*", value, a))
-            nodes[a] = node_a
-            nodes[b] = node_b
-        result = []
+            """
+            a / b = value
+            b * value = a
+            a * (1/value) = b
+            """
+            if a not in paths:
+                paths[a] = {}
+            if b not in paths:
+                paths[b] = {}
+            paths[a][b] = 1 / value
+            paths[b][a] = value
 
+        def find_target(current, target, path):
+            if current not in paths:
+                return None
+            if current == target:
+                return 1.0
+            next_nodes = [key for key in paths[current].keys() if key not in path]
+            print(f"{current} -> {target}, path={path}, next_nodes={next_nodes}")
+            if len(next_nodes) == 0:
+                return None
+            for next_node in next_nodes:
+                path.append(next_node)
+                result = find_target(next_node, target, path)
+                if result != None:
+                    return paths[current][next_node] * result
+                path.pop()
+
+        result = []
         for query in queries:
-            a, b = query[0], query[1]
-            if a not in nodes or b not in nodes:
-                result.append(-1.0)
-                continue
-            if a == b:
-                result.append(1.0)
-                continue
-            queue = deque()
-            queue.append(a)
-            seen = Set()
-            path = []
-            while len(queue) != 0:
-                curr = queue.popleft()
-                if curr in seen:
-                    continue
-                seen.add(curr)
-                curr_node = nodes[curr]
+            x, y = query[0], query[1]
+            multiplier = find_target(x, y, [x])
+            if multiplier is not None:
+                result.append(1 / multiplier)
+            else:
+                result.append(-1)
+
+        return result
 
 
 sol = Solution()
-sol.calcEquation(
-    [["a", "b"], ["b", "c"]],
-    [2.0, 3.0],
-    [["a", "c"], ["b", "a"], ["a", "e"], ["a", "a"], ["x", "x"]],
+print(
+    sol.calcEquation(
+        [["a", "b"], ["b", "c"]],
+        [2.0, 3.0],
+        [["a", "c"], ["b", "a"], ["a", "e"], ["a", "a"], ["x", "x"]],
+    )
+)
+print(
+    sol.calcEquation(
+        [["a", "b"], ["b", "c"], ["bc", "cd"]],
+        [1.5, 2.5, 5.0],
+        [["a", "c"], ["c", "b"], ["bc", "cd"], ["cd", "bc"]],
+    )
+)
+print(
+    sol.calcEquation(
+        [["a", "b"]], [0.5], [["a", "b"], ["b", "a"], ["a", "c"], ["x", "y"]]
+    )
 )
