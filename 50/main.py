@@ -3,7 +3,9 @@ Implement pow(x, n).
 """
 
 import sys
+
 sys.setrecursionlimit(1000000)
+
 
 class Solution(object):
     def myPow(self, x, n):
@@ -17,12 +19,13 @@ class Solution(object):
         elif n == 1:
             return x
         elif n == -1:
-            return 1/x
-        recur = self.myPow(x, n // 2)
+            return 1 / x
+        recur = self.myPow(x * x, n // 2)
         if n % 2 == 0:
-            return recur * recur
+            return recur
         else:
-            return x * recur * recur
+            return x * recur
+
 
 ans = Solution()
 print(ans.myPow(8.88023, 3))
