@@ -1,42 +1,22 @@
-"""
-Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+from typing import List
 
-For example,
-"A man, a plan, a canal: Panama" is a palindrome.
-"race a car" is not a palindrome.
 
-Note:
-Have you consider that the string might be empty? This is a good question to ask during an interview.
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        cleaned_string = [c.lower() for c in s if c.isalnum()]
 
-For the purpose of this problem, we define empty string as valid palindrome.
-"""
+        def isPalindromeRecur(a: int, b: int):
+            print(
+                f"a: {a}, s[a]: {cleaned_string[a]}, b: {b}, s[b]: {cleaned_string[b]}"
+            )
+            if b - a < 1:
+                return True
+            if cleaned_string[a] != cleaned_string[b]:
+                return False
+            return isPalindromeRecur(a + 1, b - 1)
 
-class Solution(object):
-    def isPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
-        front = 0
-        back = len(s) - 1
-        while front <= back:
-            f = s[front]
-            b = s[back]
-            if not f.isalnum():
-                front += 1
-                continue
-            elif not b.isalnum():
-                back -= 1
-                continue
-            else:
-                f = f.lower()
-                b = b.lower()
-                if f != b:
-                    return False
-                front += 1
-                back -= 1
-        return True
+        return isPalindromeRecur(0, len(cleaned_string) - 1)
 
-ans = Solution()
-print(ans.isPalindrome("A man, a plan, a canal: Panama"))
-print(ans.isPalindrome("race a car"))
+
+sol = Solution()
+sol.isPalindrome("race a car")
