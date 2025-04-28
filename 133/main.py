@@ -1,40 +1,38 @@
+from typing import Optional
+from collections import deque
+
+
 # Definition for a Node.
 class Node:
     def __init__(self, val=0, neighbors=None):
         self.val = val
         self.neighbors = neighbors if neighbors is not None else []
 
-    def __repr__(self) -> str:
-        return f"<{self.val}: {[neighbor.val for neighbor in self.neighbors]}>"
-
 
 class Solution:
-    def cloneGraph(self, node: Node) -> Node:
+    def cloneGraph(self, node: Optional["Node"]) -> Optional["Node"]:
+        """
+        approach
+        do a bfs, to get all the nodes and the edges
+        rebuild a new graph
+        """
         if node is None:
             return None
-        return NodeCloner().clone_node(node)
+        nodes = set()
+        edges = set()
+        queue = deque()
+        queue.append(node)
+        while queue:
+            current_node = queue.popleft()
+            if current_node.val not in nodes:
+                nodes.add(current_node.val)
+            for neighbor in current_node.neighbors:
+                edges.add((current_node.val, neighbor.val))
+                if neighbor.val not in nodes:
+                    queue.append(neighbor)
 
-
-class NodeCloner:
-    def __init__(self):
-        self.visited = {}
-
-    def clone_node(self, node: Node) -> Node:
-        self.visited[node.val] = Node(node.val)
-        self.visited[node.val].neighbors = [
-            self.clone_node(neighbor)
-            if neighbor.val not in self.visited
-            else self.visited[neighbor.val]
-            for neighbor in node.neighbors
-        ]
-        return self.visited[node.val]
-
-
-node1 = Node(1)
-node2 = Node(2)
-node3 = Node(3)
-node4 = Node(4)
-node1.neighbors = [node2, node4]
-node2.neighbors = [node1, node3]
-node3.neighbors = [node2, node4]
-node4.neighbors = [node1, node3]
+        nodes_map = {k: Node(k) for k in nodes}
+        for edge in edges:
+            a, b = edge
+            nodes_map[a].neighbors.append(nodes_map[b])
+        return nodes_map[node.val]

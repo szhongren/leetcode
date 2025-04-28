@@ -1,46 +1,38 @@
-"""
-Given a linked list, remove the nth node from the end of list and return its head.
-"""
+from typing import Optional, List
+
+
 # Definition for singly-linked list.
-class ListNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
-class Solution(object):
-    def removeNthFromEnd(self, head, n):
+
+class Solution:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         """
-        :type head: ListNode
-        :type n: int
-        :rtype: ListNode
+        approach
+        fast slow pointer
+        1 2 3 4 5, 2
+        remove 4
+        1, 1
+        1, 2
+        1, 3
+        1, 4
+        move fast > n + 1 times, so that slow points to node right before node to remove
         """
-        if head == None:
+        if head is None:
             return None
-        curr = head
-        tail = head
-        for i in range(n):
-            curr = curr.next
-        if curr == None:
+        slow, fast = head, head
+        while fast != None and n > 0:
+            fast = fast.next
+            n -= 1
+        prev = None
+        while fast != None:
+            prev = slow
+            slow = slow.next
+            fast = fast.next
+        if slow == head:
             return head.next
-        while curr.next != None:
-            curr = curr.next
-            tail = tail.next
-        tail.next = tail.next.next
+        prev.next = slow.next
         return head
-
-def makeNumber(a):
-    out = []
-    while a > 0:
-        digit = a % 10
-        a = a // 10
-        out.append(ListNode(digit))
-    for i in range(len(out) - 1):
-        out[i].next = out[i + 1]
-    return out[0]
-
-ans = Solution()
-new = ans.removeNthFromEnd(makeNumber(21), 1)
-new2 = ans.removeNthFromEnd(makeNumber(1), 1)
-new3 = ans.removeNthFromEnd(None, 0)
-new4 = ans.removeNthFromEnd(makeNumber(21), 2)
-pass

@@ -1,13 +1,20 @@
-"""
-Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in place.
+from typing import List
 
-click to show follow up.
 
-Follow up:
-Did you use extra space?
-A straight forward solution using O(mn) space is probably a bad idea.
-A simple improvement uses O(m + n) space, but still not the best solution.
-Could you devise a constant space solution?
-"""
-
-# TODO: NEEDS CODE FROM BEFORE
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        """
+        approach:
+        go through the grid one by one, if value == 0, add x to zero, y to zero
+        """
+        to_zero_x = set()
+        to_zero_y = set()
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                if matrix[i][j] == 0:
+                    to_zero_x.add(i)
+                    to_zero_y.add(j)
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                if i in to_zero_x or j in to_zero_y:
+                    matrix[i][j] = 0
