@@ -11,6 +11,7 @@ Example: 19 is a happy number
 12 + 02 + 02 = 1
 """
 
+
 class Solution(object):
     def isHappy(self, n):
         """
@@ -25,6 +26,7 @@ class Solution(object):
             n = digit_sum(n)
         return False
 
+
 def digit_sum(n):
     """
     :type n: int
@@ -36,4 +38,3 @@ def digit_sum(n):
         result += digit * digit
         n //= 10
     return result
-

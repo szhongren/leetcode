@@ -1,36 +1,27 @@
-"""
-Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+from typing import List
 
-You may assume no duplicates in the array.
 
-Here are few examples.
-[1,3,5,6], 5 → 2
-[1,3,5,6], 2 → 1
-[1,3,5,6], 7 → 4
-[1,3,5,6], 0 → 0
-"""
-
-class Solution(object):
-    def searchInsert(self, nums, target):
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
         """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
-        start = 0
-        end = len(nums)
-        if target > nums[-1]:
-            return end
-        while start < end:
-            mid = (end + start) // 2
-            if nums[mid] < target:
-                start = mid + 1
-            elif nums[mid] >= target:
-                end = mid
-        return end
+        binary search
+        look for value, if not found, return +1 or -1
 
-ans = Solution()
-print(ans.searchInsert([1,3,5,6], 5))
-print(ans.searchInsert([1,3,5,6], 2))
-print(ans.searchInsert([1,3,5,6], 7))
-print(ans.searchInsert([1,3,5,6], 0))
+        edge cases:
+        [] -> not possible
+        [1] -> 0 if < 1, 1 if > 1, 0/1 if == 1
+        [1, 3], 2 ->
+        """
+        start, end = 0, len(nums) - 1  # inclusive
+        while start <= end:
+            midpoint = (start + end) // 2
+            if nums[midpoint] == target:
+                return midpoint
+            elif nums[midpoint] < target:
+                start = midpoint + 1
+                if start > end:
+                    return start
+            elif nums[midpoint] > target:
+                end = midpoint - 1
+                if start > end:
+                    return start

@@ -1,15 +1,20 @@
-"""
-Rotate an array of n elements to the right by k steps.
+from typing import List
 
-For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4].
 
-Note:
-Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        reverse, then reverse first k, and reverse rest
+        """
+        n = len(nums)
 
-[show hint]
+        def reverse(start: int, end: int):
+            if start >= end:
+                return
+            nums[start], nums[end] = nums[end], nums[start]
+            reverse(start + 1, end - 1)
 
-Hint:
-Could you do it in-place with O(1) extra space?
-"""
-
-# TODO: NEEDS CODE FROM BEFORE
+        reverse(0, n - 1)
+        reverse(0, (k % n) - 1)
+        reverse(k % n, n - 1)

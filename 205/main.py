@@ -1,40 +1,22 @@
-"""
-Given two strings s and t, determine if they are isomorphic.
-
-Two strings are isomorphic if the characters in s can be replaced to get t.
-
-All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character but a character may map to itself.
-
-For example,
-Given "egg", "add", return true.
-
-Given "foo", "bar", return false.
-
-Given "paper", "title", return true.
-"""
-
-class Solution(object):
-    def isIsomorphic(self, s, t):
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
         """
-        :type s: str
-        :type t: str
-        :rtype: bool
+        approach
+        2 maps, forward and backward
+        edge cases:
+        different lens -> impossible
         """
-        shifts = {}
-        t_seen = {}
-        for (a, b) in zip(s, t):
-            if shifts.__contains__(a):
-                if b != chr(ord(a) + shifts[a]):
+        forward = {}
+        backward = {}
+        for i in range(len(s)):
+            a, b = s[i], t[i]
+            if a not in forward and b not in backward:
+                forward[a] = b
+                backward[b] = a
+            if a in forward:
+                if forward[a] != b:
                     return False
-            elif b not in t_seen:
-                shifts[a] = ord(b) - ord(a)
-                t_seen[b] = True
-            else:
-                return False
+            if b in backward:
+                if backward[b] != a:
+                    return False
         return True
-
-ans = Solution()
-print(ans.isIsomorphic("ab", "aa"))
-print(ans.isIsomorphic("foo", "bar"))
-print(ans.isIsomorphic("egg", "add"))
-print(ans.isIsomorphic("paper", "title"))

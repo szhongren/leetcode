@@ -1,34 +1,33 @@
-"""
-Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.
+from typing import List
 
-For example, given the following triangle
-[
-     [2],
-    [3,4],
-   [6,5,7],
-  [4,1,8,3]
-]
-The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
-"""
 
-class Solution(object):
-    def minimumTotal(self, triangle):
+class Solution:
+    def minimumTotal(self, triangle: List[List[int]]) -> int:
         """
-        :type triangle: List[List[int]]
-        :rtype: int
-        """
-        triangle[0] = 3 * triangle[0]
-        for row in range(1, len(triangle)):
-            for col in range(len(triangle[row])):
-                triangle[row][col] += min(triangle[row - 1][col], triangle[row - 1][col + 1])
-            triangle[row] = [triangle[row][0]] + triangle[row] + [triangle[row][-1]]
-        return min(triangle[-1][1:-1])
+        approach
+        bottom up dp, because we end up with 1 value at the top
+        for each level above the bottom, set value == min(bottom left, bottom right) + current
+        return triangle[0][0]
 
-ans = Solution()
-print(ans.minimumTotal([
-     [2],
-    [3,4],
-   [6,5,7],
-  [4,1,8,3]
-]))
-print(ans.minimumTotal([[-10]]))
+        edge cases
+        0 levels -> not possible
+        1 level -> return only value
+        """
+        for i in range(len(triangle) - 2, -1, -1):
+            for j in range(len(triangle[i])):
+                triangle[i][j] += min(triangle[i + 1][j], triangle[i + 1][j + 1])
+        return triangle[0][0]
+
+
+"""
+1
+
+1
+2 3
+1 4 8
+
+4
+3 7
+1 4 8
+
+"""

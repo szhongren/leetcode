@@ -1,40 +1,42 @@
-"""
-Determine whether an integer is a palindrome. Do this without extra space.
-
-click to show spoilers.
-
-Some hints:
-Could negative integers be palindromes? (ie, -1)
-
-If you are thinking of converting the integer to string, note the restriction of using extra space.
-
-You could also try reversing an integer. However, if you have solved the problem "Reverse Integer", you know that the reversed integer might overflow. How would you handle such case?
-
-There is a more generic way of solving this problem.
-"""
-
-class Solution(object):
-    def isPalindrome(self, x):
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
         """
-        :type x: int
-        :rtype: bool
+        cases
+        neg -> false
+        positive -> recursive
+        return true after loop or at base case
         """
         if x < 0:
             return False
-        div = 1
-        while x / div >= 10:
-            div = div * 10
 
-        while x:
-            left = x / div
-            right = x % 10
-
-            if left != right:
+        def isPalindromeRecur(x: int, p: int) -> bool:
+            # 1 digit or 0
+            if p <= 1:
+                return True
+            last_digit = x % 10
+            first_digit = x // p
+            print(x, p)
+            print(last_digit, first_digit)
+            if last_digit != first_digit:
                 return False
+            return isPalindromeRecur((x - (first_digit * p)) // 10, p / 100)
 
-            x = ( x % div ) / 10
-            div /= 100
-        return True
+        p = 10
+        while p <= x:
+            p *= 10
+        p /= 10
+        return isPalindromeRecur(x, p)
 
-ans = Solution()
-print(ans.isPalindrome(100021))
+
+sol = Solution()
+print(sol.isPalindrome(1001))
+
+"""
+0 -> True
+1 -> True
+10 -> False
+11 -> True
+100 -> False
+101 -> True
+100011 -> False
+"""
