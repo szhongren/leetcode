@@ -1,34 +1,26 @@
-"""
-Given an array of non-negative integers, you are initially positioned at the first index of the array.
+from typing import List
 
-Each element in the array represents your maximum jump length at that position.
 
-Determine if you are able to reach the last index.
-
-For example:
-A = [2,3,1,1,4], return true.
-
-A = [3,2,1,0,4], return false.
-"""
-
-class Solution(object):
-    def canJump(self, nums):
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
         """
-        :type nums: List[int]
-        :rtype: bool
-        """
-        l = len(nums)
-        max = nums[0]
-        for i in range(l):
-            if max >= l - 1:
-                return True
-            elif max <= i and nums[i] == 0:
-                return False
-            elif i + nums[i] > max:
-                max = i + nums[i]
-        return False
+        approach
+        DP
+        for each position, for each position I can reach starting with the last
+        if position == end, return true
 
-ans = Solution()
-print(ans.canJump([2, 3, 1, 1, 4]))
-print(ans.canJump([3, 2, 1, 0, 4]))
-print(ans.canJump([2,5,0,0]))
+        edge cases:
+        [] -> not possible
+        [1] -> True
+        [0] -> True
+        [0, 1] -> False
+        """
+        n = len(nums)
+        can_reach = [False] * n
+        can_reach[0] = True
+        for i in range(n):
+            if not can_reach[i]:
+                continue
+            for j in range(i + 1, min(i + nums[i] + 1, n)):
+                can_reach[j] = True
+        return can_reach[-1]

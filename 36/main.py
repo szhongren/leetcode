@@ -1,57 +1,43 @@
-"""
-Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
-
-The Sudoku board could be partially filled, where empty cells are filled with the character '.'.
+from typing import List
 
 
-A partially filled sudoku which is valid.
-
-Note:
-A valid Sudoku board (partially filled) is not necessarily solvable. Only the filled cells need to be validated.
-"""
-
-class Solution(object):
-    def isValidSudoku(self, board):
+class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
         """
-        :type board: List[List[str]]
-        :rtype: bool
+        approach
+        for every row, every col, every sq, have a set
+        iterate through the list, if value already in set, return false
+        else add
+        at end, return True
         """
-        for row in board:
-            seen = {}
-            for ch in row:
-                if ch == '.':
-                    continue
-                elif ch in seen:
-                    return False
-                else:
-                    seen[ch] = True
+        col_sets = {n: set() for n in range(9)}
+        row_sets = {n: set() for n in range(9)}
+        sq_sets = {(a, b): set() for a in [0, 1, 2] for b in [0, 1, 2]}
 
         for i in range(9):
-            seen = {}
             for j in range(9):
-                curr = board[j][i]
-                if curr == '.':
+                value = board[i][j]
+                if value == ".":
                     continue
-                elif curr in seen:
+                if (
+                    value in col_sets[i]
+                    or value in row_sets[j]
+                    or value in sq_sets[(i // 3, j // 3)]
+                ):
                     return False
-                else:
-                    seen[curr] = True
-
-        for i in range(0, 7, 3):
-            for j in range(0, 7, 3):
-                seen = {}
-                for x in range(3):
-                    for y in range(3):
-                        curr = board[i + x][j + y]
-                        if curr == '.':
-                            continue
-                        elif curr in seen:
-                            return False
-                        else:
-                            seen[curr] = True
-                print(seen)
+                col_sets[i].add(value)
+                row_sets[j].add(value)
+                sq_sets[(i // 3, j // 3)].add(value)
         return True
-
-
-ans = Solution()
-print(ans.isValidSudoku([".87654321","2........","3........","4........","5........","6........","7........","8........","9........"]))
+        """
+         0 1 2 3 4 5 6 7 8
+        0
+        1
+        2
+        3
+        4
+        5
+        6
+        7
+        8
+        """

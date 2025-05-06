@@ -53,3 +53,29 @@ func invertTree(root *TreeNode) *TreeNode {
 	root.Right = temp
 	return root
 }
+
+func invertTree2(root *TreeNode) *TreeNode {
+	if root == nil {
+		return nil
+	}
+
+	queue := []*TreeNode{root}
+
+	for len(queue) > 0 {
+		node := queue[0]
+		queue = queue[1:]
+
+		// Swap left and right children
+		node.Left, node.Right = node.Right, node.Left
+
+		// Add non-nil children to the queue
+		if node.Left != nil {
+			queue = append(queue, node.Left)
+		}
+		if node.Right != nil {
+			queue = append(queue, node.Right)
+		}
+	}
+
+	return root
+}
