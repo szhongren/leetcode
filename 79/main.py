@@ -1,34 +1,55 @@
-"""
-Given a 2D board and a word, find if the word exists in the grid.
+from typing import List, Set
 
-The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
 
-For example,
-Given board =
-
-[
-  ['A','B','C','E'],
-  ['S','F','C','S'],
-  ['A','D','E','E']
-]
-
-word = "ABCCED", -> returns true,
-word = "SEE", -> returns true,
-word = "ABCB", -> returns false.
-"""
-
-class Solution(object):
-    def exist(self, board, word):
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -> bool:
         """
-        :type board: List[List[str]]
-        :type word: str
-        :rtype: bool
+        approach
+        backtracking
+        for each cell, if start of word
+        start dfs
+        dfs, at each point
+        look at neighbors not already used
+        if empty string to match, return true
+
+        edge cases:
+        [[a b c d]]
+        [[b a a a]], aaab
+        baaa
         """
+        m = len(board)
+        n = len(board[0])
+
+        def dfs(i: int, j: int, word: str, seen: Set[int]):
+            if word == "":
+                return True
+            if len(word) == 1 and board[i][j] == word[-1]:
+                return True
+            if word[-1] != board[i][j]:
+                return False
+            seen.add((i, j))
+            # look up
+            if i > 0 and (i - 1, j) not in seen and dfs(i - 1, j, word[:-1], seen):
+                return True
+            # look down
+            if i < m - 1 and (i + 1, j) not in seen and dfs(i + 1, j, word[:-1], seen):
+                return True
+            # look right
+            if j < n - 1 and (i, j + 1) not in seen and dfs(i, j + 1, word[:-1], seen):
+                return True
+            # look left
+            if j > 0 and (i, j - 1) not in seen and dfs(i, j - 1, word[:-1], seen):
+                return True
+            seen.remove((i, j))
+            return False
+
+        for i in range(m):
+            for j in range(n):
+                if board[i][j] == word[0]:
+                    if dfs(i, j, word[::-1], set()):
+                        return True
+        return False
 
 
-ans = Solution()
-print(ans.exist([
-  ['A','B','C','E'],
-  ['S','F','C','S'],
-  ['A','D','E','E']
-], "ABCCED"))
+sol = Solution()
+sol.exist([["a", "a"]], "aaa")
