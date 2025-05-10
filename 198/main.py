@@ -1,20 +1,19 @@
-"""
-You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.
+from typing import List
 
-Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.
-"""
 
-class Solution(object):
-    def rob(self, nums):
+class Solution:
+    def rob(self, nums: List[int]) -> int:
         """
-        :type nums: List[int]
-        :rtype: int
+        approach
+        dp
+        each point is the max we can get up to that house
+        for each house, we can have 2 cases, either we rob it or not
+        if we rob it, our max is curr + dp[i - 2]
+        if we don't rob it, our max is curr + dp[i - 1]
+        return dp[-1]
         """
-        nums = [0] * 2 + nums
-        for i in range(2, len(nums)):
-            nums[i] = max(nums[i - 1], nums[i - 2] + nums[i])
-        return nums[-1]
-
-
-ans = Solution()
-print(ans.rob([2,1,1,2]))
+        n = len(nums)
+        dp = [0] * (n + 2)
+        for i in range(n):
+            dp[i] = max(nums[i] + dp[i - 2], dp[i - 1])
+        return dp[-3]
