@@ -1,31 +1,30 @@
-"""
-Given a collection of distinct numbers, return all possible permutations.
+from typing import List
 
-For example,
-[1,2,3] have the following permutations:
-"""
 
-class Solution(object):
-    def permute(self, nums):
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
         """
-        :type nums: List[int]
-        :rtype: List[List[int]]
+        approach
+        recursive
+        len = 0, return [[]]
+        len = 1, return [[a]]
+        prev = recur(nums[1:])
+        for every item in prev, add nums[0] to every possible spot
+        return
         """
         n = len(nums)
         if n == 0:
             return [[]]
-        elif n == 1:
-            return [[nums[0]]]
-        else:
-            prev = self.permute(nums[1:])
-            for i in range(n - 1):
-                prev.extend(self.permute(nums[1:]))
-            prev.sort()
-            prev_len = len(prev[0]) + 1
-            for i in range(len(prev)):
-                prev[i].insert(i % prev_len, nums[0])
-            return prev
 
-ans = Solution()
-for v in ans.permute([1, 2, 3, 4]):
-    print(v)
+        def permuteRecur(nums: List[int]):
+            n = len(nums)
+            if n == 1:
+                return [[nums[0]]]
+            prev = permuteRecur(nums[1:])
+            result = []
+            for permutation in prev:
+                for i in range(len(permutation) + 1):
+                    result.append(permutation[:i] + [nums[0] + permutation[i:]])
+            return result
+
+        return permuteRecur(nums)
