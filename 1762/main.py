@@ -4,14 +4,20 @@ from typing import List
 class Solution:
     def findBuildings(self, heights: List[int]) -> List[int]:
         """
-        approach:
-        have a max that represents tallest building to the right of this current location
-        from -1 to 0, tallest_building_to_right = max(tallest, current), then if current < tallest_to_right, don't append to results list
+        approach
+        from the right, keep track of the tallest building
+        if tallest to right >= current building, push i onto stack
+        return stack.reverse
+        edge cases:
+        0 -> not possible
+        1 -> return [0]
+        O(n)
         """
-        max_height_to_right = 0
+        tallest_to_right = 0
+        n = len(heights)
         result = []
-        for i in range(len(heights) - 1, -1, -1):
-            if heights[i] > max_height_to_right:
+        for i in range(n - 1, -1, -1):
+            if heights[i] > tallest_to_right:
                 result.append(i)
-            max_height_to_right = max(max_height_to_right, heights[i])
-        return result[::-1]
+            tallest_to_right = max(tallest_to_right, heights[i])
+        return list(reversed(result))

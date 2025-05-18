@@ -1,29 +1,39 @@
-"""
-Write a function to find the longest common prefix string amongst an array of strings.
+from typing import List
 
-"""
-class Solution(object):
-    def longestCommonPrefix(self, strs):
-        """
-        :type strs: List[str]
-        :rtype: str
-        """
-        if len(strs) == 0:
+
+class Trie:
+    def __init__(self):
+        self.next = {}
+        self.is_end = False
+
+    def add_word(self, word: str, i: int = 0):
+        if i == len(word):
+            self.is_end = True
+            return
+        first = word[i]
+        if first not in self.next:
+            self.next[first] = Trie()
+        self.next[first].add_word(word, i + 1)
+
+    def longest_prefix(self):
+        if self.is_end or len(self.next) > 1:
             return ""
-        first = strs[0]
-        common_len = len(first)
-        for str in strs[1:]:
-            if common_len == 0:
-                break
-            curr_common = 0
-            for ch_i in range(min(len(str), common_len)):
-                if str[ch_i] != first[ch_i]:
-                    break
-                else:
-                    curr_common += 1
-            common_len = min(curr_common, common_len)
-        return first[:common_len]
+        char = list(self.next.keys())[0]
+        return char + self.next[char].longest_prefix()
 
-ans = Solution()
-print(ans.longestCommonPrefix([]))
-print(ans.longestCommonPrefix(["abc", "ab"]))
+
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        """
+        approach
+        use a trie
+        then, from the root, while next has 1 element, create the prefix
+        edge cases:
+        "" -> prefix = ""
+
+        """
+        trie = Trie()
+        for word in strs:
+            trie.add_word(word)
+
+        return trie.longest_prefix()

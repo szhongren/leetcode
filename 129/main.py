@@ -14,19 +14,26 @@ class Solution:
         """
         approach
         tail recursion
-        for leaf node, return running sum
-        else, add sum for each branch
-        return sum
+        recursive sum from the root
+        each call carries a running sum
+        for each node, if leaf, return accumulator
+        otherwise, sum recur(children)
+        edge cases
+        None: + return
+        if leaf, return acc
         """
 
-        def sumNumbersRecur(root: Optional[TreeNode], running_sum: int) -> int:
+        def sumNumbersRecur(root: Optional[TreeNode], acc: int) -> int:
             if root is None:
                 return 0
-            elif root.left is None and root.right is None:
-                return running_sum * 10 + root.val
-            else:
-                return sumNumbersRecur(
-                    root.left, running_sum * 10 + root.val
-                ) + sumNumbersRecur(root.right, running_sum * 10 + root.val)
+            if root.left is None and root.right is None:
+                return acc + root.val
+            acc = acc + root.val
+            return sum(
+                [
+                    sumNumbersRecur(root.left, acc * 10),
+                    sumNumbersRecur(root.right, acc * 10),
+                ]
+            )
 
         return sumNumbersRecur(root, 0)

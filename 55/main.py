@@ -5,22 +5,23 @@ class Solution:
     def canJump(self, nums: List[int]) -> bool:
         """
         approach
-        DP
-        for each position, for each position I can reach starting with the last
-        if position == end, return true
-
+        dp
+        start with [False] * n
+        dp[0] = True
+        for i in range(n):
+            if dp[i]:
+                for i in range(1, i + nums[i])
+                    dp[i] = True
+        return dp[-1]
         edge cases:
-        [] -> not possible
-        [1] -> True
-        [0] -> True
-        [0, 1] -> False
+        0 -> impossible
+        1 -> return True
         """
         n = len(nums)
-        can_reach = [False] * n
-        can_reach[0] = True
+        dp = [False] * n
+        dp[0] = True
         for i in range(n):
-            if not can_reach[i]:
-                continue
-            for j in range(i + 1, min(i + nums[i] + 1, n)):
-                can_reach[j] = True
-        return can_reach[-1]
+            if dp[i]:
+                for j in range(i + 1, min(n, i + nums[i] + 1)):
+                    dp[j] = True
+        return dp[-1]

@@ -1,5 +1,5 @@
-from collections import deque
 from typing import Optional, List
+from collections import deque
 
 
 # Definition for a binary tree node.
@@ -14,24 +14,22 @@ class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
         """
         approach
-        use a queue
-        for each iteration, take queue[-1] to be the rightmost
-        then, for each item in the queue, put its children onto the queue, left then right
-        end when no items in the queue
+        for every level, put onto new queue
+        result.append(queue[-1])
+        queue = new_queue
+        end when queue empty
         """
-        if root is None:
-            return []
-        queue = deque()
-        queue.append(root)
         result = []
+        if root is None:
+            return result
+        queue = deque([root])
         while queue:
             result.append(queue[-1].val)
-            for _ in range(len(queue)):
-                # remove items from this level
-                item = queue.popleft()
-                # add the next
-                if item.left is not None:
-                    queue.append(item.left)
-                if item.right is not None:
-                    queue.append(item.right)
+            new_queue = deque()
+            for node in queue:
+                if node.left is not None:
+                    new_queue.append(node.left)
+                if node.right is not None:
+                    new_queue.append(node.right)
+            queue = new_queue
         return result

@@ -1,20 +1,18 @@
 from typing import List
-from heapq import heappush, heappop
-from math import sqrt
+from heapq import heappop, heappush
 
 
 class Solution:
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
+        """
+        approach
+        for every point, put into heap (sqrt(x1 **2 - x2 ** 2) + (y1 ** 2 - y2 ** 2))
+        if heap size > k, pop
+        """
         heap = []
-        dist_to_coord = {}
         for x, y in points:
-            dist = sqrt(x**2 + y**2)
-            if dist not in dist_to_coord:
-                dist_to_coord[dist] = []
-            dist_to_coord[dist].append([x, y])
-            heappush(heap, dist)
-        result = []
-        while len(result) < k:
-            dist = heappop(heap)
-            result += dist_to_coord[dist]
-        return result[:k]
+            dist = pow(x**2 + y**2, 0.5)
+            heappush(heap, (-dist, (x, y)))
+            if len(heap) > k:
+                heappop(heap)
+        return [xy for _, xy in heap]

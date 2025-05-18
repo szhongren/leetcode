@@ -1,43 +1,29 @@
-from collections import deque
-
-
 class Solution:
     def validPalindrome(self, s: str) -> bool:
         """
-        approach:
-        recursion
-        base case: 1 char or ""
-        else:
-        check first and last char
-        if equal
-        recur without first and last
-        else if still have remove available
-        recur with removing first or last
+        approach
+        recursive
+        base case:
+        if len(s) == 1 or 0 or 2:
+        return true
+        else
+        if front and back are equal, return recur(s[1:-1])
+        if not equal, return recur(s[:-1]) or recur(s[1:])
+        have flag for whether delete has been used
         """
 
-        def validPalindromeRecur(s: deque, can_remove: bool) -> bool:
-            if len(s) <= 1:
+        def validPalindromeRecur(start: int, end: int, can_delete: bool) -> bool:
+            if start > end:
                 return True
-            if s[0] == s[-1]:
-                last = s.pop()
-                first = s.popleft()
-                if validPalindromeRecur(s, can_remove):
-                    return True
-                s.appendleft(first)
-                s.append(last)
-            else:
-                if can_remove:
-                    last = s.pop()
-                    if validPalindromeRecur(s, False):
-                        return True
-                    s.append(last)
-                    s.popleft()
-                    if validPalindromeRecur(s, False):
-                        return True
-                return False
+            if start == end:
+                return True
+            if s[start] != s[end]:
+                if can_delete:
+                    return validPalindromeRecur(
+                        start + 1, end, False
+                    ) or validPalindromeRecur(start, end - 1, False)
+                else:
+                    return False
+            return validPalindromeRecur(start + 1, end - 1, can_delete)
 
-        return validPalindromeRecur(deque(s), True)
-
-
-sol = Solution()
-sol.validPalindrome("eceec")
+        return validPalindromeRecur(0, len(s) - 1, True)

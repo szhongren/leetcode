@@ -1,12 +1,17 @@
 from typing import List
-from heapq import heappop, heappush
+from heapq import heappush, heappop
 
 
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
         """
-        approach:
-        use a min heap, every time it goes over size k, drop the minimum number
+        approach
+        use min heap
+        push every element
+        if len(heap) > k:
+        pop
+        return heap[0]
+        nlogn
         """
         heap = []
         for num in nums:

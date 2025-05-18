@@ -1,12 +1,24 @@
-"""
-Given an array of n integers where n > 1, nums, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].
+from typing import List
 
-Solve it without division and in O(n).
 
-For example, given [1,2,3,4], return [24,12,8,6].
-
-Follow up:
-Could you solve it with constant space complexity? (Note: The output array does not count as extra space for the purpose of space complexity analysis.)
-"""
-
-# TODO: NEEDS CODE FROM BEFORE
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        """
+        approach
+        get prefix product and suffix product
+        then, insert solution into result
+        """
+        n = len(nums)
+        prefix_product = [1] * n
+        suffix_product = [1] * n
+        prefix_product[0] = nums[0]
+        suffix_product[-1] = nums[-1]
+        for i in range(1, n):
+            prefix_product[i] = prefix_product[i - 1] * nums[i]
+        for i in range(n - 2, -1, -1):
+            suffix_product[i] = suffix_product[i + 1] * nums[i]
+        result = [suffix_product[1]]
+        for i in range(1, n - 1):
+            result.append(prefix_product[i - 1] * suffix_product[i + 1])
+        result.append(prefix_product[-2])
+        return result
