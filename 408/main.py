@@ -2,35 +2,42 @@ class Solution:
     def validWordAbbreviation(self, word: str, abbr: str) -> bool:
         """
         approach
-        recursion, base case:
-        "", ""
-        else
-        if first chars are equal, drop first chars and recur
-        else
-        get chars until non-numeric, convert to int, and take out first x chars from word and continue
+        2 pointers
+        if both at end, return True
+        if one is empty and not the other, return False
+        else:
+        if not digit:
+        check if word[i] == abbr[j]
+        if not, return False
+        else, recurse with i + 1, j + 1
+        if digit, if leading 0, return False
+        else, take until not digit
+        i += int(value)
+        j += len(number)
         """
+        m = len(word)
+        n = len(abbr)
 
-        def validWordAbbreviationRecur(word: str, abbr: str) -> bool:
-            if word == "" and abbr == "":
+        def validWordAbbreviationRecur(i: int, j: int):
+            if i == m and j == n:
                 return True
-            if word == "" or abbr == "":
+            if i > m:
                 return False
-            if word[0] == abbr[0]:
-                return validWordAbbreviationRecur(word[1:], abbr[1:])
-            if not abbr[0].isdigit():
+            if i == m or j == n:
                 return False
-            if abbr[0] == "0":
-                return False
-            i = 0
-            while i < len(abbr) and abbr[i].isdigit():
-                i += 1
-            count = int(abbr[:i])
-            if count > len(word):
-                return False
-            return validWordAbbreviationRecur(word[count:], abbr[i:])
 
-        return validWordAbbreviationRecur(word, abbr)
+            if abbr[j].isdigit():
+                if abbr[j] == "0":
+                    return False
+                b = j
+                while j < n and abbr[j].isdigit():
+                    j += 1
+                value = int(abbr[b:j])
+                return validWordAbbreviationRecur(i + value, j)
+            else:
+                if word[i] == abbr[j]:
+                    return validWordAbbreviationRecur(i + 1, j + 1)
+                else:
+                    return False
 
-
-sol = Solution()
-print(sol.validWordAbbreviation("internationalization", "i5a11o1"))
+        return validWordAbbreviationRecur(0, 0)

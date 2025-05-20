@@ -1,63 +1,46 @@
-from typing import Dict
+from typing import List
+from collections import deque
 
-from functools import cache
 
-
-class Solution(object):
-    def maxAreaOfIsland(self, grid):
+class Solution:
+    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
         """
-        :type grid: List[List[int]]
-        :rtype: int
-        for i, j in x, y:
-            visited[(i, j)] = False
-
-        call helper
-
-        def dfs(visited):
-            take any one that's not been visited
-            visit connected points
-            log max
-            if all visited
-            return max
+        approach
+        for cell in grid
+        if cell == 1:
+        bfs
+        keep track of number of cells visited
+        when we do bfs, set grid[i][j] to 0
+        every time we see a new cell, check the max size of the island
+        return max_island_size
         """
-        max_size = 0
-        visited = {}
+        self.max_island_size = 0
+        m = len(grid)
+        n = len(grid[0])
 
-        for i in range(len(grid)):
-            for j in range(len(grid[0])):
+        def bfs(x: int, y: int):
+            size = 0
+            queue = deque([(x, y)])
+            grid[x][y] = 0
+            while queue:
+                a, b = queue.popleft()
+                size += 1
+                if a > 0 and grid[a - 1][b] == 1:
+                    grid[a - 1][b] = 0
+                    queue.append((a - 1, b))
+                if a < m - 1 and grid[a + 1][b] == 1:
+                    grid[a + 1][b] = 0
+                    queue.append((a + 1, b))
+                if b > 0 and grid[a][b - 1] == 1:
+                    grid[a][b - 1] = 0
+                    queue.append((a, b - 1))
+                if b < n - 1 and grid[a][b + 1] == 1:
+                    grid[a][b + 1] = 0
+                    queue.append((a, b + 1))
+            self.max_island_size = max(self.max_island_size, size)
+
+        for i in range(m):
+            for j in range(n):
                 if grid[i][j] == 1:
-                    visited[(i, j)] = False
-        not_visited = [a for a in visited]
-
-        @cache
-        def dfs(x, y):
-            if (x, y) not in visited:
-                return 0
-            if visited[(x, y)]:
-                return 0
-            a, b, c, d = (x, y - 1), (x, y + 1), (x - 1, y), (x + 1, y)
-            visited[(x, y)] = True
-            return grid[x][y] + dfs(*a) + dfs(*b) + dfs(*c) + dfs(*d)
-
-        for x, y in not_visited:
-            if visited[(x, y)]:
-                continue
-            max_size = max(dfs(x, y), max_size)
-        return max_size
-
-
-sol = Solution()
-print(
-    sol.maxAreaOfIsland(
-        [
-            [0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
-            [0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0],
-            [0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
-        ]
-    )
-)
+                    bfs(i, j)
+        return self.max_island_size

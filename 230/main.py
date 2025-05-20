@@ -1,65 +1,33 @@
-"""
-Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.
+from typing import Optional
+from heapq import heappush, heappop
 
-Note:
-You may assume k is always valid, 1 ≤ k ≤ BST's total elements.
-
-Follow up:
-What if the BST is modified (insert/delete operations) often and you need to find the kth smallest frequently? How would you optimize the kthSmallest routine?
-
-Hint:
-
-Try to utilize the property of a BST.
-What if you could modify the BST node's structure?
-The optimal runtime complexity is O(height of BST).
-"""
 
 # Definition for a binary tree node.
-class TreeNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
-class Solution(object):
-    def kthSmallest(self, root, k):
+
+class Solution:
+    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         """
-        :type root: TreeNode
-        :type k: int
-        :rtype: int
+        approach
+        use a heap, push every element onto it
+        if size of heap > k, pop
+        use a max heap
         """
-        stack = [root]
-        found = False
-        while len(stack) != 0:
-            curr = stack[-1]
-            stack = stack[:-1]
-            if curr == None:
-                found = True
-            elif found:
-                if k == 1:
-                    return curr.val
-                else:
-                    k -= 1
-                found = False
-            else:
-                stack.append(curr.right)
-                stack.append(curr)
-                stack.append(curr.left)
+        self.heap = []
 
-def make_tree(ls):
-    """
-    :type ls: List[int]
-    :rtype: TreeNode
-    """
-    list_nodes = list(map(lambda x: TreeNode(x) if x != None else None, ls))
-    length = len(list_nodes)
-    for i in range(length // 2):
-        if list_nodes[i] != None:
-            if i * 2 + 1 < length:
-                list_nodes[i].left = list_nodes[i * 2 + 1]
-            if i * 2 + 2 < length:
-                list_nodes[i].right = list_nodes[i * 2 + 2]
-    return list_nodes[0]
+        def kthSmallestRecur(root: Optional[TreeNode]):
+            if root is None:
+                return
+            heappush(self.heap, -root.val)
+            if len(self.heap) > k:
+                heappop(self.heap)
+            kthSmallestRecur(root.left)
+            kthSmallestRecur(root.right)
 
-ans = Solution()
-print(ans.kthSmallest(make_tree([8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7, 9, 11, 13, 15]), 1))
+        kthSmallestRecur(root)
+        return -self.heap[0]

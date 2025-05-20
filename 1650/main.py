@@ -13,30 +13,28 @@ class Solution:
     def lowestCommonAncestor(self, p: "Node", q: "Node") -> "Node":
         """
         approach
-        take p, look to see if q is a parent or a child
-        if parent, return q, if child, return p
-        then, if neither, go to q and get parent until we find a node we have seen before
+        look for parents of p, up till the root node
+        put each visited parent in seen nodes
+        if q visited, return q
+        else, look for parents of q, until we see a node we have seen before
+        return that node
+        edge cases:
+        * nodes in tree?
+        both nodes are the same? still works
+        if p is parent of q or q is parent of p, still works
         """
-        parent = p
-        seen_parents = set()
-        while parent is not None:
-            if parent.val == q.val:
-                return q
-            seen_parents.add(parent.val)
-            parent = parent.parent
-        children = [p]
-        # dfs
-        while children:
-            child = children.pop()
-            if child.val == q.val:
-                return p
-            if child.left is not None:
-                children.append(child.left)
-            if child.right is not None:
-                children.append(child.right)
-        parent = q
-        while parent is not None:
-            if parent.val in seen_parents:
-                return parent
-            parent = parent.parent
+        seen_nodes = set()
+        curr_node = p
+        while curr_node is not None:
+            if curr_node.val == q.val:
+                return curr_node
+            seen_nodes.add(curr_node.val)
+            curr_node = curr_node.parent
+        # q not parent of p
+        curr_node = q
+        while curr_node is not None:
+            if curr_node.val in seen_nodes:
+                return curr_node
+            seen_nodes.add(curr_node.val)
+            curr_node = curr_node.parent
         return None

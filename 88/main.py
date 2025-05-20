@@ -7,18 +7,20 @@ class Solution:
         * 2 pointers
         * go from back to keep it simple
         """
-        end = m + n - 1
-        while m > 0 and n > 0:
-            a, b = nums1[m - 1], nums2[n - 1]
-            if a < b:
-                nums1[end] = b
-                n -= 1
+        target = len(nums1) - 1
+        a, b = m - 1, n - 1
+        while a >= 0 and b >= 0:
+            val1, val2 = nums1[a], nums2[b]
+            if val1 < val2:
+                # swap b
+                nums1[target] = nums2[b]
+                target -= 1
+                b -= 1
             else:
-                nums1[end] = a
-                m -= 1
-            end -= 1
-
-        if n > 0:
-            while n > 0:
-                nums1[n - 1] = nums2[n - 1]
-                n -= 1
+                nums1[target] = nums1[a]
+                target -= 1
+                a -= 1
+        while b >= 0:
+            nums1[target] = nums2[b]
+            target -= 1
+            b -= 1
