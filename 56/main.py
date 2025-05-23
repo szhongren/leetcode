@@ -5,22 +5,32 @@ class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
         """
         approach
-        use a stack
-        sort intervals, then iterate through
-        pick out one, and if it's not got any more after, just append to results
-        if it's got ones after, check first one and see if it's intersecting
-        if not intersecing, append to results
-        if intersecting, merge and repeat
+        sort the intervals
+        use a stack, push onto stack first item
+        then, for ever item, if it intersects with the top of the stack, pop, merge, push
+        do this until does not intersect, then push a new item on
+        return stack
         """
-        intervals = sorted(intervals)
+        n = len(intervals)
+        intervals.sort()
         stack = [intervals[0]]
-        i = 1
-        while i < len(intervals):
-            next_interval = intervals[i]
-            if stack[-1][-1] >= next_interval[0]:
-                # should merge
-                stack[-1] = [stack[-1][0], max(stack[-1][1], next_interval[1])]
+
+        def intersecting(a: List[int], b: List[int]):
+            """
+            [] ()
+            [(])
+            ([])
+            ([)]
+            """
+            a1, a2 = a
+            b1, b2 = b
+            return b2 >= a1 and b1 <= a2
+
+        for i in range(1, n):
+            if intersecting(stack[-1], intervals[i]):
+                a1, a2 = stack.pop()
+                b1, b2 = intervals[i]
+                stack.append([min(a1, b1), max(a2, b2)])
             else:
-                stack.append(next_interval)
-            i += 1
+                stack.append(intervals[i])
         return stack

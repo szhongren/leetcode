@@ -1,61 +1,60 @@
+from typing import List
 from collections import deque
-from typing import List, Tuple
 
 
 class Solution:
     def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
         """
         approach
-        bfs from source
+        check to make sure source and target are 0
+        bfs with levels, if I am at the target, return level
+        else, if bfs finished, return -1
         """
-
-        seen = {(0, 0): 1}
-        if grid[0][0] == 1 or grid[-1][-1] == 1:
+        m = len(grid)
+        n = len(grid[0])
+        if grid[0][0] != 0 or grid[-1][-1] != 0:
             return -1
+        queue = deque([(0, 0)])
+        grid[0][0] = 1
+        path_len = 1
+        while queue:
+            new_queue = deque()
+            for x, y in queue:
+                if x == m - 1 and y == n - 1:
+                    return path_len
+                # 8 directions
+                if x > 0 and y > 0 and grid[x - 1][y - 1] == 0:
+                    grid[x - 1][y - 1] = 1
+                    new_queue.append((x - 1, y - 1))
 
-        def generate_neighbors(x: int, y: int) -> List[Tuple[int, int]]:
-            potentials = [
-                (x - 1, y - 1),
-                (x - 1, y),
-                (x - 1, y + 1),
-                (x, y - 1),
-                (x, y + 1),
-                (x + 1, y - 1),
-                (x + 1, y),
-                (x + 1, y + 1),
-            ]
-            return [
-                (a, b)
-                for a, b in potentials
-                if a >= 0
-                and a < len(grid)
-                and b >= 0
-                and b < len(grid[0])
-                and grid[a][b] != 1
-            ]
+                if x > 0 and grid[x - 1][y] == 0:
+                    grid[x - 1][y] = 1
+                    new_queue.append((x - 1, y))
 
-        queue = deque()
-        queue.extend(generate_neighbors(0, 0))
-        while len(queue) != 0:
-            a, b = queue.popleft()
-            neighbors = generate_neighbors(a, b)
-            potential_scores = [seen[(x, y)] for x, y in neighbors if (x, y) in seen]
-            queue.extend([(x, y) for x, y in neighbors if (x, y) not in seen])
-            seen[(a, b)] = min(potential_scores) + 1
-        return seen.get((len(grid) - 1, len(grid[0]) - 1), -1)
+                if x > 0 and y < n - 1 and grid[x - 1][y + 1] == 0:
+                    grid[x - 1][y + 1] = 1
+                    new_queue.append((x - 1, y + 1))
 
+                if y < n - 1 and grid[x][y + 1] == 0:
+                    grid[x][y + 1] = 1
+                    new_queue.append((x, y + 1))
 
-sol = Solution()
-# print(sol.shortestPathBinaryMatrix([[0, 1], [1, 0]]))
-print(sol.shortestPathBinaryMatrix([[1, 0, 0], [1, 1, 0], [1, 1, 0]]))
-print(
-    sol.shortestPathBinaryMatrix(
-        [
-            [0, 0, 0, 0, 1],
-            [1, 0, 0, 0, 0],
-            [0, 1, 0, 1, 0],
-            [0, 0, 0, 1, 1],
-            [0, 0, 0, 1, 0],
-        ]
-    )
-)
+                if x < m - 1 and y < n - 1 and grid[x + 1][y + 1] == 0:
+                    grid[x + 1][y + 1] = 1
+                    new_queue.append((x + 1, y + 1))
+
+                if x < m - 1 and grid[x + 1][y] == 0:
+                    grid[x + 1][y] = 1
+                    new_queue.append((x + 1, y))
+
+                if x < m - 1 and y > 0 and grid[x + 1][y - 1] == 0:
+                    grid[x + 1][y - 1] = 1
+                    new_queue.append((x + 1, y - 1))
+
+                if y > 0 and grid[x][y - 1] == 0:
+                    grid[x][y - 1] = 1
+                    new_queue.append((x, y - 1))
+
+            path_len += 1
+            queue = new_queue
+        return -1
