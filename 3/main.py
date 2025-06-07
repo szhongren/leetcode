@@ -1,32 +1,31 @@
-"""
-Given a string, find the length of the longest substring without repeating characters.
-"""
-
-class Solution(object):
-    def lengthOfLongestSubstring(self, s):
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
         """
-        :type s: str
-        :rtype: int
+        approach
+        keep 2 pointers, start and end
+        end is in loop
+        keep a running count of chars
+        if has repeats, move left
+        get max length
+        abcabcbb
+        i | ch | slow | max_len | chars
+        0 | a  | 0    | 0       | {a: 1}
+        1 | b  | 0    | 2       | {a: 1, b: 1}
+        2 | c  | 0    | 3       | {a: 1, b: 1, c: 1}
+        3 | a  | 0    | 3       | {a: 2, b: 1, c: 1}
+        3 | a  | 1    | 3       | {a: 1, b: 1, c: 1}
         """
-        # s_mod = "_" + s
-        found = {}
+        chars = {}
+        slow = 0
         max_len = 0
-        curr_len = 0
-        trailing = -1
-        for i in range(len(s)):
-            curr_char = s[i]
-            if curr_char in found and found[curr_char] > trailing:
-                trailing = found[curr_char]
-                curr_len = i - trailing
-            else:
-                curr_len += 1
-                if curr_len > max_len:
-                    max_len = curr_len
-            found[curr_char] = i
+        n = len(s)
+        for i in range(n):
+            ch = s[i]
+            if ch not in chars:
+                chars[ch] = 0
+            chars[ch] += 1
+            while chars[ch] > 1:
+                chars[s[slow]] -= 1
+                slow += 1
+            max_len = max(max_len, i - slow + 1)
         return max_len
-
-ans = Solution()
-print(ans.lengthOfLongestSubstring("aab"))
-print(ans.lengthOfLongestSubstring("pwwkew"))
-print(ans.lengthOfLongestSubstring("tmmzuxt"))
-

@@ -1,11 +1,19 @@
-"""
-Given an unsorted integer array, find the first missing positive integer.
+from typing import List
 
-For example,
-Given [1,2,0] return 3,
-and [3,4,-1,1] return 2.
 
-Your algorithm should run in O(n) time and uses constant space.
-"""
-
-# TODO: NEEDS CODE FROM BEFORE
+class Solution:
+    def firstMissingPositive(self, nums: List[int]) -> int:
+        """
+        approach
+        go through the array and mark values as present
+        go through from 0 to max and return first value that's not existing
+        if all existing, return max + 1
+        """
+        present = set(nums)
+        max_val = max(nums)
+        if max_val <= 0:
+            return 1
+        for i in range(1, max_val):
+            if i not in present:
+                return i
+        return max_val + 1
