@@ -8,43 +8,32 @@ class Solution:
         use stack, if has precedence, evaluate immediately, otherwise evaluate later
         """
         stack = deque()
-        s_without_spaces = s.replace(" ", "")
         i = 0
-        j = 0
-        while i < len(s_without_spaces):
-            if j >= len(s_without_spaces):
-                previous_number = int(s_without_spaces[i:j])
-                if len(stack) > 0 and (stack[-1] == "*" or stack[-1] == "/"):
-                    # early compute
-                    op = stack.pop()
-                    value = stack.pop()
-                    if op == "*":
-                        previous_number = previous_number * value
-                    elif op == "/":
-                        previous_number = int(value / previous_number)
-                stack.append(previous_number)
-                break
-            elif s_without_spaces[j].isdigit():
-                j += 1
+        s = s.replace(" ", "")
+        n = len(s)
+        while i < n:
+            ch = s[i]
+            if ch.isdigit():
+                current_number = 0
+                while i < n and s[i].isdigit():
+                    current_number *= 10
+                    current_number += int(s[i])
+                    i += 1
+                stack.append(current_number)
+                if len(stack) < 3:
+                    continue
+                operator = stack[-2]
+                if operator == "*":
+                    b, _, a = stack.pop(), stack.pop(), stack.pop()
+                    stack.append(b * a)
+                elif operator == "/":
+                    b, _, a = stack.pop(), stack.pop(), stack.pop()
+                    stack.append(a // b)
             else:
-                previous_number = int(s_without_spaces[i:j])
-                if len(stack) > 0 and (stack[-1] == "*" or stack[-1] == "/"):
-                    # early compute
-                    op = stack.pop()
-                    value = stack.pop()
-                    if op == "*":
-                        previous_number = previous_number * value
-                    elif op == "/":
-                        previous_number = int(value / previous_number)
-                operation = s_without_spaces[j]
-                i = j + 1
-                j = i
-                stack.append(previous_number)
-                stack.append(operation)
+                stack.append(ch)
+                i += 1
         while len(stack) != 1:
-            a = stack.popleft()
-            op = stack.popleft()
-            b = stack.popleft()
+            a, op, b = stack.popleft(), stack.popleft(), stack.popleft()
             if op == "+":
                 stack.appendleft(a + b)
             elif op == "-":
