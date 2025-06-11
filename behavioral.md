@@ -20,3 +20,13 @@ high level feedback
 - answer the question directly and make sure to emphasize the parts that answer the question
 
 - influence question, show that I heard others' perspective, and I brought data and convinced people with POCs/data that I brought
+
+- some quantifications would be preferred in the situation/task and in the result
+- impactful project, has to be well elaborated and more generally, including a challenge would elevate the answer
+- my role was clear, but explicitly highlight what my stake was in the project (leading, mentoring, coordinating, etc)
+
+- don't use "compromise" with Meta, frame it as an influence instead of compromise, maybe show some pushback
+
+- understand the question behind the question, need to answer that, always answer subtextual question directly
+
+- conflict + major impact qns, could have been better
